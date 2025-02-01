@@ -1,0 +1,1877 @@
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\pom.xml
+■ 漏洞类型：过时依赖风险（中危）
+  ▶ 位置：L86
+  ▶ 代码特征：
+    <version>3.1.0</version>
+  ▶ 攻击向量：使用过时的maven-war-plugin可能被攻击者利用已知漏洞进行攻击
+  ▶ 修复建议：升级到maven-war-plugin的最新版本以修复已知漏洞
+
+<审计通过> 
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：不安全的开发工具依赖（中危）
+  ▶ 位置：L21-L25
+  ▶ 代码特征：
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <optional>true</optional>
+    </dependency>
+  ▶ 攻击向量：由于spring-boot-devtools是开发工具，可能在生产环境中被意外启用，暴露调试信息或者自动重启功能，导致潜在的安全漏洞。
+  ▶ 修复建议：在生产环境中移除或排除devtools依赖
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：不安全的依赖版本（中危）
+  ▶ 位置：L86
+  ▶ 代码特征：
+    <version>3.1.0</version>
+  ▶ 攻击向量：maven-war-plugin的3.1.0版本存在已知漏洞， attackers may exploit vulnerabilities to disrupt service or gain unauthorized access.
+  ▶ 修复建议：升级至最新的稳定版本
+
+■ 漏洞类型：不安全的依赖版本（中危）
+  ▶ 位置：L30
+  ▶ 代码特征：
+    <artifactId>springfox-boot-starter</artifactId>
+  ▶ 攻击向量：springfox-boot-starter的所使用版本可能存在未修复的安全漏洞，可能导致API文档信息泄露或被篡改。
+  ▶ 修复建议：审查并更新至最新版本以降低安全风险
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：使用过时依赖（中危）
+  ▶ 位置：L36-L38
+  ▶ 代码特征：
+    <artifactId>swagger-models</artifactId>
+    <version>1.6.2</version>
+  ▶ 攻击向量：依赖的swagger-models库版本过旧，可能存在已知的安全漏洞
+  ▶ 修复建议：升级swagger-models库至最新版本以避免潜在的安全漏洞
+
+■ 漏洞类型：配置不当（中危）
+  ▶ 位置：L88
+  ▶ 代码特征：
+    <failOnMissingWebXml>false</failOnMissingWebXml>
+  ▶ 攻击向量：未强制要求web.xml文件，可能导致安全配置的忽略
+  ▶ 修复建议：将failOnMissingWebXml设置为true以确保安全配置
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：潜在依赖漏洞（中危）
+  ▶ 位置：L86
+  ▶ 代码特征：
+    <version>3.1.0</version> 
+  ▶ 攻击向量：maven-war-plugin 版本 3.1.0 可能存在已知漏洞，建议检查并更新到最新稳定版本
+  ▶ 修复建议：验证maven-war-plugin的版本并更新至安全版本
+
+■ 漏洞类型：潜在依赖漏洞（中危）
+  ▶ 位置：L43
+  ▶ 代码特征：
+    <artifactId>mysql-connector-java</artifactId> 
+  ▶ 攻击向量：mysql-connector-java 可能存在已知安全漏洞，建议检查依赖的版本，确保使用受支持的最新版本 
+  ▶ 修复建议：更新mysql-connector-java至最新可用版本以降低风险
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\pom.xml
+■ 漏洞类型：无
+  ▶ 位置：N/A
+  ▶ 代码特征：N/A
+  ▶ 修复建议：无
+
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：依赖版本过期（中危）
+  ▶ 位置：L86
+  ▶ 代码特征：
+    <version>3.1.0</version>
+  ▶ 潜在影响：maven-war-plugin 版本 3.1.0 已知存在多个漏洞，可能导致构建的 WAR 文件存在安全隐患。
+  ▶ 修复建议：升级到最新版本的 maven-war-plugin。
+
+■ 漏洞类型：依赖版本过期（中危）
+  ▶ 位置：L71
+  ▶ 代码特征：
+    <version>2.5.15</version>
+  ▶ 潜在影响：spring-boot-maven-plugin 版本 2.5.15 存在多个已知安全漏洞，可能导致项目在运行时受到攻击。
+  ▶ 修复建议：升级到最新版本的 spring-boot-maven-plugin。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\pom.xml
+■ 漏洞类型：使用过时的组件（中危）
+  ▶ 位置：L86
+  ▶ 代码特征：
+    <version>3.1.0</version>
+  ▶ 攻击向量：潜在的已知漏洞可能被利用，攻击者可通过针对已知漏洞进行攻击。
+  ▶ 修复建议：将maven-war-plugin更新至最新版本以修复已知安全问题。
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\resources\logback.xml
+■ 漏洞类型：信息泄露（低危）
+  ▶ 位置：L4
+  ▶ 代码特征：
+    <property name="log.path" value="/home/ruoyi/logs" />
+  ▶ 攻击向量：攻击者可能通过日志路径获取到应用的日志文件，进而窃取敏感信息
+  ▶ 修复建议：将日志路径设置为不易被猜测的路径，同时限制日志文件访问权限
+
+■ 漏洞类型：信息泄露（低危）
+  ▶ 位置：L6
+  ▶ 代码特征：
+    <property name="log.pattern" value="%d{HH:mm:ss.SSS} [%thread] %-5level %logger{20} - [%method,%line] - %msg%n" />
+  ▶ 攻击向量：如果日志中包含敏感信息，攻击者可能通过分析日志格式获取重要上下文信息
+  ▶ 修复建议：确保不在日志中输出敏感信息
+</审计报告>
+--------------------------------
+<审计报告>
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\resources\logback.xml
+■ 漏洞类型：敏感数据泄露（中危）
+  ▶ 位置：L62
+  ▶ 代码特征：
+    <file>${log.path}/sys-user.log</file>
+  ▶ 攻击向量：日志文件路径和名称可被外部用户猜测，可能导致敏感信息泄露
+  ▶ 修复建议：使用动态的、随机的文件名称，或确保日志文件的访问权限严格控制
+
+■ 漏洞类型：敏感数据泄露（中危）
+  ▶ 位置：L9
+  ▶ 代码特征：
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+  ▶ 攻击向量：控制台输出日志可能包含敏感信息，攻击者通过控制台注入等手段获取敏感数据
+  ▶ 修复建议：过滤或屏蔽敏感信息，确保不在控制台输出中显示
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\resources\logback.xml
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L17-L27
+  ▶ 代码特征：
+    <file>${log.path}/sys-info.log</file>
+  ▶ 攻击向量：${log.path}若暴露可以导致系统日志路径泄露，攻击者可试图访问日志文件
+  ▶ 修复建议：检查${log.path}的访问权限，避免将敏感配置暴露
+  
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L62-L72
+  ▶ 代码特征：
+    <file>${log.path}/sys-user.log</file>
+  ▶ 攻击向量：${log.path}若未加以保护，可能导致用户访问日志文件泄露
+  ▶ 修复建议：实施日志文件的访问控制和加密措施
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\resources\logback.xml
+■ 漏洞类型：日志文件路径外泄（中危）
+  ▶ 位置：L62, L39
+  ▶ 代码特征：
+    <file>${log.path}/sys-user.log</file>
+    <file>${log.path}/sys-error.log</file>
+  ▶ 攻击向量：攻击者可通过预测或暴力破解日志路径，访问敏感日志信息
+  ▶ 修复建议：确保log.path为安全目录，限制访问权限，并考虑使用更复杂的路径名避免推测
+
+■ 漏洞类型：敏感信息记录（中危）
+  ▶ 位置：L70, L48
+  ▶ 代码特征：
+    <pattern>${log.pattern}</pattern>
+  ▶ 攻击向量：若log.pattern中包含敏感数据（如用户信息），则可能泄露到日志中
+  ▶ 修复建议：确保log.pattern不包含任何敏感信息
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\resources\logback.xml
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L62
+  ▶ 代码特征：
+    <file>${log.path}/sys-user.log</file>
+  ▶ 攻击向量：若${log.path}被暴露，攻击者可能获取日志文件位置，从而访问敏感信息
+  ▶ 修复建议：使用安全的存储路径，并限制对日志文件的访问权限
+
+■ 漏洞类型：日志记录敏感信息（高危）
+  ▶ 位置：L70
+  ▶ 代码特征：
+    <pattern>${log.pattern}</pattern>
+  ▶ 攻击向量：若log.pattern中包含敏感信息（如用户信息、密码），将导致敏感信息被记录并可能泄露
+  ▶ 修复建议：确保日志不记录敏感信息，使用合适的日志模式
+</审计报告>
+--------------------------------
+<审计报告>
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\resources\logback.xml
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L62
+  ▶ 代码特征：
+    <file>${log.path}/sys-user.log</file>
+  ▶ 攻击向量：若${log.path}被不当配置，攻击者可显示或访问日志文件，暴露敏感信息。
+  ▶ 修复建议：限制日志文件的访问权限，并确保路径配置安全。
+  
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L65
+  ▶ 代码特征：
+    <fileNamePattern>${log.path}/sys-user.%d{yyyy-MM-dd}.log</fileNamePattern>
+  ▶ 攻击向量：同上，在日志文件名中包含日期信息可能被恶意利用，帮助攻击者推测日志生成的时间和频率，进一步暴露系统使用情况。
+  ▶ 修复建议：同上，确保日志文件的访问权限安全，并适配更安全的文件命名策略。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\resources\logback.xml
+■ 漏洞类型：缺乏敏感信息过滤（信息）
+  ▶ 位置：L8-L12
+  ▶ 代码特征：
+    <pattern>${log.pattern}</pattern>
+  ▶ 攻击向量：如果log.pattern包含敏感数据，可能在控制台输出中泄露
+  ▶ 修复建议：使用合适的模式过滤敏感信息
+  
+■ 漏洞类型：缺乏日志审计（中危）
+  ▶ 位置：L84-L86
+  ▶ 代码特征：
+    <root level="info">
+  ▶ 攻击向量：信息级别日志记录未包括调试和错误信息，可能导致问题排查困难
+  ▶ 修复建议：考虑添加debug和error日志级别以增强审计能力
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\resources\logback.xml
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L17
+  ▶ 代码特征：
+    <file>${log.path}/sys-info.log</file>
+  ▶ 攻击向量：如果${log.path}指向外部可访问目录，恶意用户可通过访问日志文件获取敏感信息。
+  ▶ 修复建议：确保日志文件路径不可被外部访问，或使用安全权限配置。
+
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L21
+  ▶ 代码特征：
+    <fileNamePattern>${log.path}/sys-info.%d{yyyy-MM-dd}.log</fileNamePattern>
+  ▶ 攻击向量：暴露历史日志文件名模式，潜在泄露系统操作信息。
+  ▶ 修复建议：限制外部访问日志文件，或对日志名进行混淆处理。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\resources\mybatis\mybatis-config.xml
+■ 漏洞类型：开启缓存可能引发的缓存污染（中危）
+  ▶ 位置：L8
+  ▶ 代码特征：
+    <setting name="cacheEnabled" value="true" />
+  ▶ 攻击向量：如果缓存未妥善管理，恶意用户可能通过重复请求利用缓存数据导致数据泄露或篡改
+  ▶ 修复建议：根据需求调整缓存策略并确保缓存清理机制的实施
+
+■ 漏洞类型：默认执行器类型未限制（中危）
+  ▶ 位置：L13
+  ▶ 代码特征：
+    <setting name="defaultExecutorType" value="SIMPLE" />
+  ▶ 攻击向量：使用BATCH执行器未加控制可能导致任意SQL执行，恶意用户可以执行大量操作
+  ▶ 修复建议：限制执行器类型为REUSE或通过参数化查询减少风险
+
+</审计报告>
+--------------------------------
+<审计报告>
+<审计通过>
+</审计报告>
+--------------------------------
+<审计通过>
+--------------------------------
+<审计报告>
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\common\CaptchaController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L91
+  ▶ 代码特征：
+    ajax.put("img", Base64.encode(os.toByteArray()));
+  ▶ 攻击向量：攻击者可以通过直接访问该接口获取验证码图像的Base64编码，从而可能进行恶意操作（如暴力破解）。
+  ▶ 修复建议：对生成的验证码进行额外的保护，例如引入限制请求频率或增加验证码复杂度。
+
+■ 漏洞类型：未充分验证的用户输入（信息）
+  ▶ 位置：L49
+  ▶ 代码特征：
+    boolean captchaEnabled = configService.selectCaptchaEnabled();
+  ▶ 攻击向量：如果configService遭到攻击，攻击者能够修改验证码启用状态，导致验证码被绕过。
+  ▶ 修复建议：确保configService的安全性，并对其返回结果进行有效验证。
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\common\CaptchaController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L91
+  ▶ 代码特征：
+    ajax.put("img", Base64.encode(os.toByteArray()));
+  ▶ 攻击向量：恶意用户可利用此接口获取验证码的Base64编码，从而进行暴力破解
+  ▶ 潜在影响：未限制验证码的获取频率，攻击者可能通过自动化手段获取大量验证码，影响账号安全
+  ▶ 修复建议：引入验证码请求次数限制和有效时间限制，并对验证码的获取行为进行验证
+
+■ 漏洞类型：未验证的输入（低危）
+  ▶ 位置：L49
+  ▶ 代码特征：
+    boolean captchaEnabled = configService.selectCaptchaEnabled();
+  ▶ 攻击向量：未对configService的返回结果进行严格检查，若其被篡改，可能导致验证码功能被关闭
+  ▶ 潜在影响：攻击者通过改变配置使得验证码失效，从而进行恶意操作
+  ▶ 修复建议：确保configService的返回结果经过适当的验证和保护
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\common\CaptchaController.java
+■ 漏洞类型：未验证的输入（中危）
+  ▶ 位置：L64
+  ▶ 代码特征：
+    String captchaType = RuoYiConfig.getCaptchaType();
+  ▶ 攻击向量：可被恶意用户通过操控请求参数来影响验证码的生成类型，可能导致生成不安全的或不必要的验证码
+  ▶ 修复建议：对captchaType进行白名单验证，确保其值为预期的类型
+
+■ 漏洞类型：不安全的图像处理（中危）
+  ▶ 位置：L83
+  ▶ 代码特征：
+    ImageIO.write(image, "jpg", os);
+  ▶ 攻击向量：若image对象来源于用户输入，可能存在图像处理上的漏洞
+  ▶ 修复建议：确保image是经过验证和清理的，并限制图像类型以防止潜在的恶意文件上传
+
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L87
+  ▶ 代码特征：
+    return AjaxResult.error(e.getMessage());
+  ▶ 攻击向量：抛出异常时直接返回错误信息，可能泄露系统内部信息给攻击者
+  ▶ 修复建议：不要直接返回异常的细节，采用通用错误信息，并记录详细日志
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\common\CaptchaController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L91
+  ▶ 代码特征：
+    ajax.put("img", Base64.encode(os.toByteArray()));
+  ▶ 攻击向量：如果Base64编码的验证码图像被发送到第三方，可以被恶意用户利用进行暴力破解。
+  ▶ 修复建议：在前端或后端实现flood protection来限制验证码图像的请求频率，同时对返回的验证码进行过期处理，避免长时间有效。
+
+■ 漏洞类型：未验证的外部输入（中危）
+  ▶ 位置：L64
+  ▶ 代码特征：
+    String captchaType = RuoYiConfig.getCaptchaType();
+  ▶ 攻击向量：若RuoYiConfig.getCaptchaType()返回了未验证的内容，有可能导致生成的验证码不符合预期，允许攻击者更改生成的验证码方式。
+  ▶ 修复建议：确保captchaType的可选值是有限且经过验证的。
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\common\CommonController.java
+■ 漏洞类型：路径遍历（高危）
+  ▶ 位置：L51-L53
+  ▶ 代码特征：
+    if (!FileUtils.checkAllowDownload(fileName)) {
+        throw new Exception(StringUtils.format("文件名称({})非法，不允许下载。 ", fileName));
+    }
+  ▶ 攻击向量：如果checkAllowDownload方法未进行适当的验证，攻击者可以构造fileName如"../../../../etc/passwd"进行路径遍历攻击，提取系统文件。
+  ▶ 修复建议：完善checkAllowDownload方法，对fileName进行严格的格式和路径验证，确保只允许合法的文件名。
+
+■ 漏洞类型：不安全的文件下载（中危）
+  ▶ 位置：L60
+  ▶ 代码特征：
+    FileUtils.writeBytes(filePath, response.getOutputStream());
+  ▶ 攻击向量：如果filePath参数可被攻击者控制，可以下载非预期文件。
+  ▶ 修复建议：确保filePath的生成和用户输入的严格验证，避免直接使用来自外部的输入进行文件操作。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\common\CommonController.java
+■ 漏洞类型：不安全文件下载（高危）
+  ▶ 位置：L155-L156
+  ▶ 代码特征：
+    FileUtils.writeBytes(downloadPath, response.getOutputStream());
+  ▶ 攻击向量：攻击者可以通过构造恶意文件路径（如../）下载服务器敏感文件
+  ▶ 修复建议：对downloadPath进行严格校验，确保仅允许下载特定文件。
+
+■ 漏洞类型：信息泄露（高危）
+  ▶ 位置：L51-L54
+  ▶ 代码特征：
+    throw new Exception(StringUtils.format("文件名称({})非法，不允许下载。 ", fileName));
+  ▶ 攻击向量：错误信息中包含非法文件名称，可能被攻击者用于猜测文件系统结构
+  ▶ 修复建议：抛出通用异常，不透露具体的非法文件名称。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\common\CommonController.java
+■ 漏洞类型：路径遍历（高危）
+  ▶ 位置：L56
+  ▶ 代码特征：
+    String filePath = RuoYiConfig.getDownloadPath() + fileName;
+  ▶ 攻击向量：构造fileName="../secret/file.txt"以读取服务器文件
+  ▶ 修复建议：对fileName进行严格校验，只允许下载特定目录下的文件名
+
+■ 漏洞类型：未处理的IO异常（中危）
+  ▶ 位置：L155-L156
+  ▶ 代码特征：
+    FileUtils.writeBytes(downloadPath, response.getOutputStream());
+  ▶ 攻击向量：当downloadPath无效时，可能导致应用崩溃或返回错误信息
+  ▶ 修复建议：使用try-catch处理IO异常，并返回用户友好的错误提示
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\common\CommonController.java
+■ 漏洞类型：路径遍历（高危）
+  ▶ 位置：L155-L156
+  ▶ 代码特征：
+    FileUtils.writeBytes(downloadPath, response.getOutputStream());
+  ▶ 攻击向量：构造downloadPath为包含路径穿越字符的字符串，如"../../etc/passwd"，以下载服务器敏感文件
+  ▶ 修复建议：对downloadPath进行严格验证，限制可下载的路径。
+
+■ 漏洞类型：文件上传未验证（高危）
+  ▶ 位置：L83
+  ▶ 代码特征：
+    String fileName = FileUploadUtils.upload(filePath, file);
+  ▶ 攻击向量：上传的文件未经过扩展名或内容审核，允许上传恶意文件（如.php或.jsp）
+  ▶ 修复建议：实现文件类型检查与文件杀毒。
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\common\CommonController.java
+■ 漏洞类型：路径遍历（高危）
+  ▶ 位置：L155-L156
+  ▶ 代码特征：
+    FileUtils.writeBytes(downloadPath, response.getOutputStream());
+  ▶ 攻击向量：构造downloadPath=../../secret/file.txt访问服务器上任意文件
+  ▶ 潜在影响：攻击者可通过特殊构造的路径下载服务器内任意敏感文件
+  ▶ 修复建议：对downloadPath进行严格验证，确保其路径合法
+
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L84
+  ▶ 代码特征：
+    String url = serverConfig.getUrl() + fileName;
+  ▶ 攻击向量：若fileName未被充分校验，攻击者可能利用此信息构造恶意请求
+  ▶ 潜在影响：HTTP响应中可能泄露敏感信息或提供有关服务器结构的信息
+  ▶ 修复建议：对fileName进行适当的过滤和校验
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：路径穿越（高危）
+  ▶ 位置：L156
+  ▶ 代码特征：
+    FileUtils.writeBytes(downloadPath, response.getOutputStream());
+  ▶ 攻击向量：如果downloadPath参数来自用户输入，可能构造路径如 '../../../etc/passwd' 进行敏感文件下载
+  ▶ 修复建议：验证downloadPath不包含路径穿越字符并进行白名单过滤
+
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L89
+  ▶ 代码特征：
+    ajax.put("originalFilename", file.getOriginalFilename());
+  ▶ 攻击向量：通过未过滤直接返回用户上传文件名，可能泄露敏感信息
+  ▶ 修复建议：对originalFilename进行过滤，仅返回安全的文件名
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：不安全的反序列化（中危）
+  ▶ 位置：L52
+  ▶ 代码特征：
+    Properties info = (Properties) redisTemplate.execute((RedisCallback<Object>) connection -> connection.info());
+  ▶ 攻击向量：如果攻击者能够控制Redis内容，可能导致恶意数据的反序列化，从而执行代码或获取敏感数据。
+  ▶ 修复建议：确保该输入来自可信源，并验证输入的数据完整性。
+
+■ 漏洞类型：未处理的异常（中危）
+  ▶ 位置：L50
+  ▶ 代码特征：
+    public AjaxResult getInfo() throws Exception
+  ▶ 攻击向量：如果Redis操作失败，可能导致信息泄露或程序崩溃。
+  ▶ 修复建议：捕获异常并返回用户友好的错误信息，而不是直接抛出异常。
+
+■ 漏洞类型：权限绕过（高危）
+  ▶ 位置：L48
+  ▶ 代码特征：
+    @PreAuthorize("@ss.hasPermi('monitor:cache:list')")
+  ▶ 攻击向量：如果SpEL表达式未正确实现，可能被绕过，从而导致未授权访问。
+  ▶ 修复建议：审查权限管理逻辑以确保安全性。
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\monitor\CacheController.java
+■ 漏洞类型：潜在拒绝服务攻击（DoS）（中危）
+  ▶ 位置：L52
+  ▶ 代码特征：
+    Properties info = (Properties) redisTemplate.execute((RedisCallback<Object>) connection -> connection.info());
+  ▶ 攻击向量：若Redis数据库连接不够健壮，恶意用户可频繁调用此方法使得Redis服务负载过高，导致服务拒绝。
+  ▶ 修复建议：在调用前加入连接池的使用及连接数量限制，并添加适当的异常处理逻辑。
+
+■ 漏洞类型：未经授权的缓存删除（中危）
+  ▶ 位置：L118
+  ▶ 代码特征：
+    redisTemplate.delete(cacheKeys);
+  ▶ 攻击向量：未对cacheKeys的内容进行验证，如果用户能够操控cacheKeys，则可以执行不必要的删除操作。
+  ▶ 修复建议：添加对cacheKeys的来源和有效性的检查，只允许特定用户或来源的请求。
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\monitor\CacheController.java
+■ 漏洞类型：不安全的直接缓存操作（中危）
+  ▶ 位置：L118
+  ▶ 代码特征：
+    redisTemplate.delete(cacheKeys);
+  ▶ 攻击向量：如果cacheKeys来自不受信任的输入，可能导致意外删除或清空缓存
+  ▶ 修复建议：确保cacheKeys经过验证和清理，只允许删除已知的安全键
+
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L54
+  ▶ 代码特征：
+    Object dbSize = redisTemplate.execute((RedisCallback<Object>) connection -> connection.dbSize());
+  ▶ 攻击向量：如果攻击者能够访问该函数的执行权限，可以调用dbSize方法，获取数据库的大小信息，可能泄露存储信息
+  ▶ 修复建议：限制该操作的可访问性，并通过权限控制防止未授权访问
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：命令注入（中危）
+  ▶ 位置：L83
+  ▶ 代码特征：
+    Set<String> cacheKeys = redisTemplate.keys(cacheName + "*");
+  ▶ 攻击向量：构造cacheName为"abc' OR '1'='1"可以获取不应有的缓存键
+  ▶ 修复建议：验证并清理cacheName的输入，限制合法字符
+
+■ 漏洞类型：未授权访问（高危）
+  ▶ 位置：L118
+  ▶ 代码特征：
+    redisTemplate.delete(cacheKeys);
+  ▶ 攻击向量：如果cacheKeys被恶意构造，攻击者可能删除所有缓存数据
+  ▶ 修复建议：在delete操作前验证用户身份和权限，确保其有权删除特定缓存
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\monitor\CacheController.java
+■ 漏洞类型：任意缓存清除（中危）
+  ▶ 位置：L118
+  ▶ 代码特征：
+    redisTemplate.delete(cacheKeys);
+  ▶ 攻击向量：如果cacheKeys来自于用户输入，攻击者可以构造cacheKeys删除全局或重要缓存键。
+  ▶ 修复建议：在使用cacheKeys前进行严格验证，确保不包含恶意或未授权的键。
+
+■ 漏洞类型：未验证的缓存获取（中危）
+  ▶ 位置：L91
+  ▶ 代码特征：
+    String cacheValue = redisTemplate.opsForValue().get(cacheKey);
+  ▶ 攻击向量：如果cacheKey来自用户输入，攻击者可以尝试访问未授权的缓存内容。
+  ▶ 修复建议：验证cacheKey的合法性和安全性，避免敏感信息泄露。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\monitor\CacheController.java
+■ 漏洞类型：未验证的参数（中危）
+  ▶ 位置：L101-L118
+  ▶ 代码特征：
+    redisTemplate.delete(cacheKeys);
+  ▶ 攻击向量：如果cacheKeys来自不受信任的用户输入，可能导致批量删除不应删除的缓存项
+  ▶ 修复建议：对cacheKeys进行验证，确保只包含合法的缓存键
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\monitor\CacheController.java
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\monitor\CacheController.java
+■ 漏洞类型：输入验证不足（中危）
+  ▶ 位置：L65
+  ▶ 代码特征：
+    data.put("value", StringUtils.substringBetween(property, "calls=", ",usec"));
+  ▶ 攻击向量：如果property为用户可控输入，可能导致substringBetween方法引入未验证的数据，造成YAML/JSON注入等问题
+  ▶ 修复建议：对property进行严格的格式验证和限制输入来源
+
+<审计通过> 
+</审计报告>
+--------------------------------
+<审计报告>
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\monitor\ServerController.java
+■ 漏洞类型：反序列化漏洞（高危）
+  ▶ 位置：L23-L25
+  ▶ 代码特征：
+    Server server = new Server();
+    server.copyTo();
+    return AjaxResult.success(server);
+  ▶ 攻击向量：攻击者可以通过构造恶意的Server对象，利用copyTo方法执行任意代码。
+  ▶ 潜在影响：可能导致代码执行，服务器被控制。
+  ▶ 修复建议：对传入的对象进行严格验证或使用安全的对象反序列化方法。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\monitor\ServerController.java
+■ 漏洞类型：无漏洞
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：缺乏输入验证（中危）
+  ▶ 位置：L43
+  ▶ 代码特征：
+    List<SysLogininfor> list = logininforService.selectLogininforList(logininfor);
+  ▶ 攻击向量：未对logininfor参数进行严格的输入验证，可能导致通过构造恶意对象进行SQL注入或其他攻击。
+  ▶ 修复建议：对logininfor对象进行输入验证，确保其属性符合预期格式和范围。
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\monitor\SysLogininforController.java
+■ 漏洞类型：未验证输入（中危）
+  ▶ 位置：L50-L52
+  ▶ 代码特征：
+    List<SysLogininfor> list = logininforService.selectLogininforList(logininfor);
+  ▶ 攻击向量：构造恶意SysLogininfor对象注入到selectLogininforList()，导致绕过验证及获取敏感数据
+  ▶ 修复建议：在调用selectLogininforList之前，对logininfor进行严谨的校验
+
+■ 漏洞类型：敏感信息泄露（高危）
+  ▶ 位置：L53-L54
+  ▶ 代码特征：
+    util.exportExcel(response, list, "登录日志");
+  ▶ 攻击向量：通过不正当手段访问导出的Excel文件，可能会泄露用户登录信息
+  ▶ 修复建议：确保只有具备适当权限的用户能调用该导出功能，并对返回数据进行脱敏处理
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\monitor\SysLogininforController.java
+■ 漏洞类型：不安全的用户输入处理（中危）
+  ▶ 位置：L79
+  ▶ 代码特征：
+    passwordService.clearLoginRecordCache(userName);
+  ▶ 攻击向量：如果userName未经过适当的验证和清理，有可能被恶意用户构造特殊输入，例如利用空值、控制字符等，可能导致不必要的清理操作或信息泄露。
+  ▶ 修复建议：在调用passwordService方法前，验证并清理userName用户输入。
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\monitor\SysOperlogController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L36-L40
+  ▶ 代码特征：
+    List<SysOperLog> list = operLogService.selectOperLogList(operLog);
+  ▶ 攻击向量：如果SysOperLog类的某些字段未进行适当的输入验证，攻击者可以构造恶意输入，导致数据库中的敏感信息泄露。
+  ▶ 修复建议：对操作日志查询参数进行合法性校验以及必要的数据过滤。
+
+■ 漏洞类型：权限管理不当（中危）
+  ▶ 位置：L64-L66
+  ▶ 代码特征：
+    operLogService.cleanOperLog();
+  ▶ 攻击向量：如果未对调用clean()方法的用户进行适当权限验证，攻击者可能会恶意调用此方法清除日志，从而隐藏其恶意活动。
+  ▶ 修复建议：在调用清除操作日志方法前，添加用户权限校验。
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\monitor\SysOperlogController.java
+■ 漏洞类型：未授权访问（中危）
+  ▶ 位置：L64-L66
+  ▶ 代码特征：
+    operLogService.cleanOperLog();
+  ▶ 攻击向量：未对调用者进行身份验证，恶意用户可以直接调用该方法清除日志
+  ▶ 修复建议：在调用该方法前进行用户权限验证，确保调用者具有相应角色权限
+
+■ 漏洞类型：数据泄露（信息）
+  ▶ 位置：L48-L50
+  ▶ 代码特征：
+    util.exportExcel(response, list, "操作日志");
+  ▶ 攻击向量：如果操作日志列表包含敏感信息，恶意用户可能通过导出接口泄露这些信息
+  ▶ 修复建议：对导出的数据进行清洗，确保不包含敏感信息或在导出前进行权限检查
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：未验证的输入（中危）
+  ▶ 位置：L45
+  ▶ 代码特征：
+    Collection<String> keys = redisCache.keys(CacheConstants.LOGIN_TOKEN_KEY + "*");
+  ▶ 攻击向量：如果CacheConstants.LOGIN_TOKEN_KEY的值来自用户输入，攻击者可能可以通过输入恶意值来操作Redis键，导致未授权访问或数据泄露
+  ▶ 修复建议：对CacheConstants.LOGIN_TOKEN_KEY进行严格验证或清洗，确保不包含恶意字符或意外的输入
+
+■ 漏洞类型：代码逻辑问题（中危）
+  ▶ 位置：L80
+  ▶ 代码特征：
+    redisCache.deleteObject(CacheConstants.LOGIN_TOKEN_KEY + tokenId);
+  ▶ 攻击向量：tokenId的来源未检查，恶意用户可以构造tokenId值影响删除的对象，导致意外删除用户会话。
+  ▶ 修复建议：在删除操作前，验证tokenId的合法性和权限
+
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：潜在信息泄露（中危）
+  ▶ 位置：L52
+  ▶ 代码特征：
+    userOnlineList.add(userOnlineService.selectOnlineByInfo(ipaddr, userName, user));
+  ▶ 攻击向量：攻击者可能通过构造特定的ipaddr、userName、user值，利用selectOnlineByInfo方法获取不应暴露的用户在线信息
+  ▶ 修复建议：对输入参数进行严格验证和过滤，以防止敏感信息泄露
+
+■ 漏洞类型：不当授权（中危）
+  ▶ 位置：L80
+  ▶ 代码特征：
+    redisCache.deleteObject(CacheConstants.LOGIN_TOKEN_KEY + tokenId);
+  ▶ 攻击向量：若tokenId可以被用户控制，攻击者可能伪造tokenId进行非法的TOKEN删除操作
+  ▶ 修复建议：对tokenId进行验证，确保只有授权用户才能进行删除操作
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\monitor\SysUserOnlineController.java
+■ 漏洞类型：缺乏输入验证（中危）
+  ▶ 位置：L80
+  ▶ 代码特征：
+    redisCache.deleteObject(CacheConstants.LOGIN_TOKEN_KEY + tokenId);
+  ▶ 攻击向量：未对tokenId进行有效性验证，可能导致恶意token的删除操作，例如tokenId="; DROP TABLE users; --"
+  ▶ 修复建议：对tokenId进行格式和有效性检查，避免执行未知的删除操作。
+  
+■ 漏洞类型：数据泄露（信息）
+  ▶ 位置：L69
+  ▶ 代码特征：
+    return getDataTable(userOnlineList);
+  ▶ 攻击向量：userOnlineList未经过滤，可能泄露敏感用户信息，例如用户在线状态、IP地址等。
+  ▶ 修复建议：确保对返回数据进行必要的隐私过滤，只返回必要的字段。
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysConfigController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L42-L46
+  ▶ 代码特征：
+    List<SysConfig> list = configService.selectConfigList(config);
+  ▶ 攻击向量：未验证config参数来源，恶意用户可构造请求导致敏感配置信息泄露
+  ▶ 修复建议：对config参数进行验证和清洗，限制输入的字段和类型
+
+<审计通过>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysConfigController.java
+■ 漏洞类型：潜在的未授权访问（中危）
+  ▶ 位置：L54
+  ▶ 代码特征：
+    List<SysConfig> list = configService.selectConfigList(config);
+  ▶ 攻击向量：如果config中的参数未经过严格验证，攻击者可能构造特定参数导致不当数据访问
+  ▶ 修复建议：对传入的config参数进行严谨的验证和条件限制
+
+■ 漏洞类型：输出数据未转义（中危）
+  ▶ 位置：L56
+  ▶ 代码特征：
+    util.exportExcel(response, list, "参数数据");
+  ▶ 攻击向量：如果list中的数据未被正确处理，可能导致恶意数据被导出，形成数据泄露风险
+  ▶ 修复建议：确保生成Excel时对信息进行必要的筛选和编码处理以防止数据泄露
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysDeptController.java
+■ 漏洞类型：缺乏数据验证（中危）
+  ▶ 位置：L119-L130
+  ▶ 代码特征：
+    public AjaxResult remove(@PathVariable Long deptId)
+    {
+        if (deptService.hasChildByDeptId(deptId))
+        {
+            return warn("存在下级部门,不允许删除");
+        }
+        ...
+        return toAjax(deptService.deleteDeptById(deptId));
+  ▶ 攻击向量：deptId可能由于没有有效验证，攻击者可构造无效或恶意的deptId进行删除操作，可能导致意外数据丢失。
+  ▶ 修复建议：在remove方法中增加对deptId的有效性验证，比如检查其是否为正整数且符合业务逻辑。
+
+■ 漏洞类型：缺乏权限控制（高危）
+  ▶ 位置：L129
+  ▶ 代码特征：
+    deptService.checkDeptDataScope(deptId);
+  ▶ 攻击向量：如果该方法没有实现有效的权限检查，攻击者可以操纵deptId以访问或删除他们不应有权限操作的数据。
+  ▶ 修复建议：确保checkDeptDataScope方法中实施了足够的权限验证。
+
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：不安全的删除操作（中危）
+  ▶ 位置：L118
+  ▶ 代码特征：
+    dictDataService.deleteDictDataByIds(dictCodes);
+  ▶ 攻击向量：如果dictCodes未经过适当验证和清理，攻击者可能构造恶意输入如'drop table users;'进行数据删除。
+  ▶ 修复建议：对dictCodes进行有效性和类型检查，确保只允许合法的字典数据ID。
+
+■ 漏洞类型：缺乏分页保护（中危）
+  ▶ 位置：L47
+  ▶ 代码特征：
+    List<SysDictData> list = dictDataService.selectDictDataList(dictData);
+  ▶ 攻击向量：未对startPage()进行限制，攻击者可以通过构造大量的dictData请求进行拒绝服务（DoS）攻击。
+  ▶ 修复建议：限制每次请求返回的数据量，并记录请求频率以防止滥用。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysDictDataController.java
+■ 漏洞类型：未授权访问（中危）
+  ▶ 位置：L118
+  ▶ 代码特征：
+    dictDataService.deleteDictDataByIds(dictCodes);
+  ▶ 攻击向量：如果未对用户进行身份验证或授权，恶意用户可能构造请求以删除字典数据。
+  ▶ 修复建议：在调用该方法之前添加权限验证。
+
+■ 漏洞类型：未处理异常（中危）
+  ▶ 位置：L119
+  ▶ 代码特征：
+    return success();
+  ▶ 攻击向量：在dictDataService.deleteDictDataByIds调用失败时，没有处理异常可能导致应用崩溃或返回不当信息。
+  ▶ 修复建议：增加异常处理逻辑。
+
+<审计通过>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysDictDataController.java
+■ 漏洞类型：未授权访问（中危）
+  ▶ 位置：L57
+  ▶ 代码特征：
+    List<SysDictData> list = dictDataService.selectDictDataList(dictData);
+  ▶ 攻击向量：如果未对用户进行身份验证或授权，攻击者可能获取敏感的字典数据。
+  ▶ 修复建议：在执行该方法之前添加权限验证。
+
+■ 漏洞类型：未处理异常（中危）
+  ▶ 位置：L60
+  ▶ 代码特征：
+    util.exportExcel(response, list, "字典数据");
+  ▶ 攻击向量：在Excel导出过程中，如遇到I/O问题，可能造成应用程序异常。
+  ▶ 修复建议：增加异常处理逻辑以妥善处理导出过程中的错误。
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：未验证输入（高危）
+  ▶ 位置：L118
+  ▶ 代码特征：
+    dictDataService.deleteDictDataByIds(dictCodes);
+  ▶ 攻击向量：未验证的dictCodes变量可能导致批量删除操作的SQL注入，通过发送恶意构造的dictCodes值，例如"1'; DROP TABLE users; --"
+  ▶ 修复建议：对dictCodes进行严格验证，确保合法性。
+
+■ 漏洞类型：未处理的空值（中危）
+  ▶ 位置：L79
+  ▶ 代码特征：
+    if (StringUtils.isNull(data))
+  ▶ 攻击向量：当dictType无效时，data为null但未进行充分处理，可能导致后续逻辑崩溃或空指针异常
+  ▶ 修复建议：对dictType和data进行更全面的验证和处理。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysDictTypeController.java
+■ 漏洞类型：潜在的未过滤输入（中危）
+  ▶ 位置：L128-L129
+  ▶ 代码特征：
+    List<SysDictType> dictTypes = dictTypeService.selectDictTypeAll();
+  ▶ 攻击向量：如果selectDictTypeAll未对查询参数进行有效过滤，可能导致敏感数据泄露或未授权数据访问
+  ▶ 修复建议：在selectDictTypeAll方法中确保对输入参数进行有效验证和过滤
+
+■ 漏洞类型：缺乏权限审查（中危）
+  ▶ 位置：L37-L37
+  ▶ 代码特征：
+    @PreAuthorize("@ss.hasPermi('system:dict:list')")
+  ▶ 攻击向量：若权限控制存在缺陷，用户可能会访问受限的字典类型信息
+  ▶ 修复建议：确保在字典类型服务层进行严格的权限验证
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysDictTypeController.java
+■ 漏洞类型：SQL注入（高危）
+  ▶ 位置：L42
+  ▶ 代码特征：
+    List<SysDictType> list = dictTypeService.selectDictTypeList(dictType);
+  ▶ 攻击向量：如果dictType中的属性未进行适当验证和处理，攻击者可能构造恶意输入，例如在dictType某些字段中插入SQL片段。
+  ▶ 修复建议：对dictType中的所有输入进行严格验证并使用参数化查询。
+
+■ 漏洞类型：反序列化攻击（中危）
+  ▶ 位置：L128
+  ▶ 代码特征：
+    List<SysDictType> dictTypes = dictTypeService.selectDictTypeAll();
+  ▶ 攻击向量：如果SysDictType的反序列化过程受到不信任数据的影响，攻击者可以发送精心构造的对象，可能影响系统安全。
+  ▶ 修复建议：使用安全的反序列化方法并确保从未信任的来源获取数据时进行验证。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysDictTypeController.java
+■ 漏洞类型：路径参数未验证（中危）
+  ▶ 位置：L61-L63
+  ▶ 代码特征：
+    public AjaxResult getInfo(@PathVariable Long dictId)
+  ▶ 攻击向量：构造dictId为负值或其他非法类型，可能导致不当操作或信息泄露
+  ▶ 修复建议：在使用dictId之前进行有效性验证，确保其在预期范围内
+
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysDictTypeController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L76
+  ▶ 代码特征：
+    return error("新增字典'" + dict.getDictName() + "'失败，字典类型已存在");
+  ▶ 攻击向量：攻击者可通过观察错误返回信息推测系统中已存在的字典类型名称
+  ▶ 修复建议：返回通用错误信息，避免泄露具体内容
+
+<审计通过>
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysDictTypeController.java
+■ 漏洞类型：不当输入验证（中危）
+  ▶ 位置：L128
+  ▶ 代码特征：
+    List<SysDictType> dictTypes = dictTypeService.selectDictTypeAll();
+  ▶ 攻击向量：如果selectDictTypeAll方法未对输入数据进行有效验证，攻击者可能通过构造恶意输入来影响返回结果
+  ▶ 修复建议：确保dictTypeService.selectDictTypeAll()方法对输入进行严格验证和清理
+
+■ 漏洞类型：不当输入验证（中危）
+  ▶ 位置：L79
+  ▶ 代码特征：
+    return toAjax(dictTypeService.insertDictType(dict));
+  ▶ 攻击向量：如果insertDictType方法接受的dict对象包含未经过滤的用户输入，可能导致数据库被注入恶意数据
+  ▶ 修复建议：在insertDictType方法中加入对dict对象字段的严格验证
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysDictTypeController.java
+■ 漏洞类型：未授权访问（中危）
+  ▶ 位置：L128
+  ▶ 代码特征：
+    List<SysDictType> dictTypes = dictTypeService.selectDictTypeAll();
+  ▶ 攻击向量：攻击者可能通过调用selectDictTypeAll接口，获取未授权的字典类型数据
+  ▶ 修复建议：在访问控制层面增加鉴权检查，以确保只有授权用户才能访问该方法
+
+■ 漏洞类型：未处理异常（信息）
+  ▶ 位置：L95
+  ▶ 代码特征：
+    return toAjax(dictTypeService.updateDictType(dict));
+  ▶ 攻击向量：如果dictTypeService.updateDictType抛出异常，可能未能妥善处理，返回的结果可能会泄露敏感信息
+  ▶ 修复建议：使用try-catch进行异常处理，并返回适当的错误信息
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：未授权访问（高危）
+  ▶ 位置：L106
+  ▶ 代码特征：
+    dictTypeService.deleteDictTypeByIds(dictIds);
+  ▶ 攻击向量：如果没有实施权限控制，恶意用户可以调用此方法删除字典类型，可能导致数据丢失。
+  ▶ 修复建议：添加权限验证，确保只有授权用户才能执行删除操作。
+
+■ 漏洞类型：未验证输入（中危）
+  ▶ 位置：L128
+  ▶ 代码特征：
+    List<SysDictType> dictTypes = dictTypeService.selectDictTypeAll();
+  ▶ 攻击向量：如果dictTypeService的方法内部未对dictIds参数进行校验，可能导致恶意用户输入无效或恶意数据。
+  ▶ 修复建议：对输入参数进行严格的验证和清理，确保其有效性和安全性。
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L128-L130
+  ▶ 代码特征：
+    List<SysDictType> dictTypes = dictTypeService.selectDictTypeAll();
+  ▶ 攻击向量：如果未对返回的字典类型数据进行权限检查，攻击者可能会通过调用该接口获取敏感字典信息
+  ▶ 修复建议：在返回前加入用户权限验证，确保用户有权访问字典数据
+
+■ 漏洞类型：缓存控制缺失（中危）
+  ▶ 位置：L118
+  ▶ 代码特征：
+    dictTypeService.resetDictCache();
+  ▶ 攻击向量：如果系统未正确实现访问限制，恶意用户可能会频繁调用此接口刷新缓存，影响系统性能
+  ▶ 修复建议：为缓存刷新接口添加权限控制
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：无漏洞
+  ▶ 位置：无
+  ▶ 代码特征：无
+  ▶ 修复建议：无
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysIndexController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L27
+  ▶ 代码特征：
+    return StringUtils.format("欢迎使用{}后台管理框架，当前版本：v{}，请通过前端地址访问。", ruoyiConfig.getName(), ruoyiConfig.getVersion());
+  ▶ 攻击向量：恶意用户可能通过访问首页接口获取系统配置的名称和版本信息，进一步足够的信息可能被恶意利用。
+  ▶ 修复建议：不直接暴露敏感信息，考虑更改返回的信息，或控制权限访问。
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysIndexController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L27
+  ▶ 代码特征：
+    return StringUtils.format("欢迎使用{}后台管理框架，当前版本：v{}，请通过前端地址访问。", ruoyiConfig.getName(), ruoyiConfig.getVersion());
+  ▶ 攻击向量：攻击者能够通过公开的接口获取系统名称及版本，可能易受针对已知漏洞的攻击
+  ▶ 修复建议：避免向外部泄露内部配置信息，可以通过限制访问或移除版本信息
+
+<审计通过>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysLoginController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L53
+  ▶ 代码特征：
+    String token = loginService.login(loginBody.getUsername(), loginBody.getPassword(), loginBody.getCode(), loginBody.getUuid());
+  ▶ 攻击向量：若login方法未采取安全措施，攻击者可利用无效或抓取的凭证进行会话劫持
+  ▶ 修复建议：确保使用安全的令牌生成机制，并在登录失败时限制返回信息
+
+■ 漏洞类型：未验证输入（高危）
+  ▶ 位置：L49-L50
+  ▶ 代码特征：
+    public AjaxResult login(@RequestBody LoginBody loginBody)
+  ▶ 攻击向量：若loginBody中的字段未验证，攻击者能够构造特殊的输入内容如SQL注入、远程代码执行等
+  ▶ 修复建议：对loginBody进行严格的输入验证和过滤
+
+■ 漏洞类型：潜在SQL注入（高危）
+  ▶ 位置：L94
+  ▶ 代码特征：
+    List<SysMenu> menus = menuService.selectMenuTreeByUserId(userId);
+  ▶ 攻击向量：若selectMenuTreeByUserId(userId)未妥善处理userId的类型和查询，可能导致SQL注入
+  ▶ 修复建议：确保userId在用作查询前经过严格类型验证和过滤处理
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L67-L68
+  ▶ 代码特征：
+    LoginUser loginUser = SecurityUtils.getLoginUser();
+    SysUser user = loginUser.getUser();
+  ▶ 攻击向量：若返回的用户信息包含敏感数据，则可能被攻击者获取
+  ▶ 修复建议：限制返回的用户信息，仅提供必要字段
+
+■ 漏洞类型：未经验证的用户ID（中危）
+  ▶ 位置：L93
+  ▶ 代码特征：
+    Long userId = SecurityUtils.getUserId();
+  ▶ 攻击向量：未验证用户身份，攻击者可能构造请求获取不应查看的菜单列表
+  ▶ 修复建议：在调用menuService前，确保已验证用户身份及其权限
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysLoginController.java
+■ 漏洞类型：缺乏输入验证（中危）
+  ▶ 位置：L93
+  ▶ 代码特征：
+    Long userId = SecurityUtils.getUserId();
+  ▶ 攻击向量：如果SecurityUtils.getUserId()未能正确验证或过滤输入，恶意用户可能构造请求以获取其他用户的菜单。
+  ▶ 修复建议：确保SecurityUtils.getUserId()包含适当的输入验证和权限检查，以防止未授权访问。
+
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L70-L72
+  ▶ 代码特征：
+    Set<String> roles = permissionService.getRolePermission(user);
+    Set<String> permissions = permissionService.getMenuPermission(user);
+  ▶ 攻击向量：如果用户对象未经过严格的身份验证则可能导致角色和权限信息泄露给未授权用户。
+  ▶ 修复建议：确保获取用户角色和权限信息前进行充分的身份验证。
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysLoginController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L93
+  ▶ 代码特征：
+    Long userId = SecurityUtils.getUserId();
+  ▶ 攻击向量：如果SecurityUtils.getUserId()未严格验证用户身份，攻击者可获取他人用户ID，造成信息泄露
+  ▶ 修复建议：确保getUserId()方法内有适当的用户验证机制，防止任意用户信息被获取
+
+■ 漏洞类型：授权问题（高危）
+  ▶ 位置：L94
+  ▶ 代码特征：
+    List<SysMenu> menus = menuService.selectMenuTreeByUserId(userId);
+  ▶ 攻击向量：用户恶意修改userId参数，获取未授权的菜单树
+  ▶ 修复建议：在selectMenuTreeByUserId方法中添加对userId的有效性和权限检查
+
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：不安全的用户输入处理（中危）
+  ▶ 位置：L93
+  ▶ 代码特征：
+    Long userId = SecurityUtils.getUserId();
+  ▶ 攻击向量：如果SecurityUtils.getUserId() 方法未严格验证用户身份或存在伪造token的可能性，攻击者可能通过用户身份伪造获取菜单信息。
+  ▶ 潜在影响：可导致未授权访问敏感用户菜单，影响系统信息安全和业务逻辑。
+  ▶ 修复建议：确保SecurityUtils.getUserId()中包含对用户身份的严格验证。
+
+■ 漏洞类型：潜在的权限控制缺失（中危）
+  ▶ 位置：L94
+  ▶ 代码特征：
+    menuService.selectMenuTreeByUserId(userId);
+  ▶ 攻击向量：如果没有对userId的权限进行验证，攻击者在恶意构造情况下可能会获取其他用户的菜单。
+  ▶ 潜在影响：未授权用户可能访问本不应可见的菜单信息。
+  ▶ 修复建议：在调用menuService.selectMenuTreeByUserId(userId)之前，验证用户的权限。
+
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：未认证访问（中危）
+  ▶ 位置：L140
+  ▶ 代码特征：
+    return toAjax(menuService.deleteMenuById(menuId));
+  ▶ 攻击向量：未对menuId进行来源验证，攻击者可直接调用deleteMenuById删除任意菜单
+  ▶ 修复建议：在调用deleteMenuById前进行用户权限和menuId有效性检查
+
+■ 漏洞类型：信息泄露（低危）
+  ▶ 位置：L43
+  ▶ 代码特征：
+    List<SysMenu> menus = menuService.selectMenuList(menu, getUserId());
+  ▶ 攻击向量：若未对用户权限进行限制，可能泄露用户不该看到的菜单信息
+  ▶ 修复建议：对返回的菜单数据进行访问控制
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysNoticeController.java
+■ 漏洞类型：SQL注入（高危）
+  ▶ 位置：L43
+  ▶ 代码特征：
+    List<SysNotice> list = noticeService.selectNoticeList(notice);
+  ▶ 攻击向量：如果notice对象未经过滤，攻击者可以构造恶意数据使得sql查询被操纵，比如notice的条件包含SQL片段。
+  ▶ 修复建议：确保对notice对象的属性进行有效验证和过滤，避免SQL注入风险。
+
+■ 漏洞类型：不安全的数据处理（中危）
+  ▶ 位置：L89
+  ▶ 代码特征：
+    return toAjax(noticeService.deleteNoticeByIds(noticeIds));
+  ▶ 攻击向量：如果noticeIds未经过严格验证，攻击者可能通过构造恶意请求删除任意记录。
+  ▶ 修复建议：对noticeIds进行严格的格式验证和权限检查，确保只有合法的ID才能被删除。
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：无
+  ▶ 位置：无具体漏洞
+  ▶ 修复建议：无
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：未验证的输入（中危）
+  ▶ 位置：L44
+  ▶ 代码特征：
+    startPage();
+  ▶ 攻击向量：未验证输入可能导致分页参数的注入，攻击者可以构造恶意请求以获取非授权数据。
+  ▶ 修复建议：确保在调用startPage()之前对输入参数进行严格的验证和清理。
+
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L127
+  ▶ 代码特征：
+    return success(posts);
+  ▶ 攻击向量：成功返回的对象包含敏感数据，攻击者通过获得返回结果可能获取未授权信息。
+  ▶ 修复建议：对返回的数据进行过滤，只返回必要的字段。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysPostController.java
+■ 漏洞类型：潜在的命令注入（中危）
+  ▶ 位置：L45
+  ▶ 代码特征：
+    List<SysPost> list = postService.selectPostList(post);
+  ▶ 攻击向量：如果post参数未经过严格验证，攻击者可以构造恶意post输入，导致命令注入。
+  ▶ 修复建议：对post参数进行严格的输入验证和过滤。
+
+■ 漏洞类型：信息泄露（信息）
+  ▶ 位置：L127
+  ▶ 代码特征：
+    return success(posts);
+  ▶ 攻击向量：成功返回posts时，如果posts包含敏感信息，可能会导致信息泄露。
+  ▶ 修复建议：在返回前对posts进行敏感信息过滤。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysPostController.java
+■ 漏洞类型：潜在XSS（中危）
+  ▶ 位置：L127
+  ▶ 代码特征：
+    return success(posts);
+  ▶ 攻击向量：如果posts中包含HTML或JavaScript代码，攻击者可通过传入恶意数据实现跨站脚本攻击。
+  ▶ 修复建议：对返回的数据进行HTML编码处理，确保数据的安全性。
+
+■ 漏洞类型：潜在XSS（中危）
+  ▶ 位置：L46
+  ▶ 代码特征：
+    return getDataTable(list);
+  ▶ 攻击向量：如果list中使用了用户上传的数据，且未经过处理，可能导致跨站脚本攻击。
+  ▶ 修复建议：在返回前对list进行过滤和编码，确保安全。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysPostController.java
+■ 漏洞类型：不安全的Excel导出（中危）
+  ▶ 位置：L55
+  ▶ 代码特征：
+    ExcelUtil<SysPost> util = new ExcelUtil<SysPost>(SysPost.class);
+  ▶ 攻击向量：如果ExcelUtil未对文件内容进行验证，攻击者可上传恶意脚本，通过构造数据影响导出结果
+  ▶ 修复建议：确保Excel导出功能验证数据完整性和来源
+
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysPostController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L66
+  ▶ 代码特征：
+    return success(postService.selectPostById(postId));
+  ▶ 攻击向量：若postId未经过充分验证或清洗，攻击者可能通过构造不当的postId查询数据库，查看敏感岗位信息
+  ▶ 修复建议：对postId进行验证和过滤，确保其是合法有效的值
+  
+■ 漏洞类型：不充分的权限检查（中危）
+  ▶ 位置：L66
+  ▶ 代码特征：
+    return success(postService.selectPostById(postId));
+  ▶ 攻击向量：如果postService.selectPostById方法未实现适当的权限校验，恶意用户可查询不应拥有的岗位信息
+  ▶ 修复建议：在selectPostById方法中加入严格的权限检查，以确认请求者是否有权限访问该岗位信息
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：XXE（XML外部实体注入）（高危）
+  ▶ 位置：L66
+  ▶ 代码特征：
+    return success(postService.selectPostById(postId));
+  ▶ 攻击向量：构造postId为'1 OR 1=1'进行GET请求，可导致数据泄露
+  ▶ 修复建议：对postId进行严格的类型和格式验证，避免直接使用用户输入。
+
+■ 漏洞类型：不安全的数据返回（中危）
+  ▶ 位置：L127
+  ▶ 代码特征：
+    return success(posts);
+  ▶ 攻击向量：未对posts进行过滤，可能泄露敏感信息
+  ▶ 修复建议：确保posts对象中的数据经过严格的字段过滤和隐私保护处理。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysPostController.java
+■ 漏洞类型：潜在信息泄露（中危）
+  ▶ 位置：L127
+  ▶ 代码特征：
+    return success(posts);
+  ▶ 攻击向量：如果posts包含敏感信息，返回可能导致信息泄露
+  ▶ 修复建议：对返回的数据进行敏感信息过滤
+
+■ 漏洞类型：逻辑漏洞（中危）
+  ▶ 位置：L77
+  ▶ 代码特征：
+    if (!postService.checkPostNameUnique(post))
+  ▶ 攻击向量：如果checkPostNameUnique方法未能有效阻止重复的岗位名称，可能导致重复数据的处理
+  ▶ 修复建议：确保checkPostNameUnique实现了完全的唯一性检查
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L79
+  ▶ 代码特征：
+    return error("新增岗位'" + post.getPostName() + "'失败，岗位名称已存在");
+  ▶ 攻击向量：攻击者可以通过频繁尝试相同的岗位名称获取有效的反馈，进而推测系统中已存在的岗位信息。
+  ▶ 修复建议：避免返回具体错误信息，改为“操作失败，请检查输入”。
+
+<审计通过>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysPostController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L127
+  ▶ 代码特征：
+    return success(posts);
+  ▶ 攻击向量：如果posts包含敏感信息，可能导致通过正常接口暴露数据
+  ▶ 修复建议：确保posts不包含敏感信息，或使用脱敏处理
+
+■ 漏洞类型：逻辑漏洞（中危）
+  ▶ 位置：L81
+  ▶ 代码特征：
+    else if (!postService.checkPostCodeUnique(post))
+  ▶ 攻击向量：如果checkPostCodeUnique方法实现不当，可能导致允许重复的岗位编码
+  ▶ 修复建议：对checkPostCodeUnique的实现进行安全审计，确保唯一性检查的正确性
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysPostController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L85
+  ▶ 代码特征：
+    post.setCreateBy(getUsername());
+  ▶ 攻击向量：如果getUsername()未经过身份验证或获取用户信息的逻辑存在缺陷，攻击者可能伪造用户身份。
+  ▶ 修复建议：应确保getUsername()的调用有适当的权限检查，避免未授权访问。
+
+■ 漏洞类型：数据泄露（信息）
+  ▶ 位置：L127
+  ▶ 代码特征：
+    return success(posts);
+  ▶ 攻击向量：如果posts数据未经过授权检验，攻击者可能获取敏感岗位信息。
+  ▶ 修复建议：在返回数据前应验证当前用户的权限，确保用户只能访问授权范围内的数据。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysPostController.java
+■ 漏洞类型：未授权访问（中危）
+  ▶ 位置：L86
+  ▶ 代码特征：
+    return toAjax(postService.insertPost(post));
+  ▶ 攻击向量：如果没有适当的权限验证，恶意用户可能通过调用此接口插入任意岗位
+  ▶ 修复建议：在调用insertPost之前添加权限验证
+
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysPostController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L99
+  ▶ 代码特征：
+    return error("修改岗位'" + post.getPostName() + "'失败，岗位名称已存在");
+  ▶ 攻击向量：恶意用户可通过反向工程获得敏感岗位名称信息，提高社会工程学攻击的成功率
+  ▶ 修复建议：在返回错误信息时避免暴露敏感字段，可以使用通用错误提示
+    
+■ 漏洞类型：未验证返回数据安全（中危）
+  ▶ 位置：L127
+  ▶ 代码特征：
+    return success(posts);
+  ▶ 攻击向量：如果posts数据来自用户输入而未进行验证，恶意用户可能构造数据进行注入攻击
+  ▶ 修复建议：在返回数据前进行适当的验证和过滤
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysPostController.java
+■ 漏洞类型：未验证用户输入（中危）
+  ▶ 位置：L127
+  ▶ 代码特征：
+    return success(posts);
+  ▶ 攻击向量：未对posts进行验证，攻击者可构造恶意数据进行返回。
+  ▶ 修复建议：确保对posts的数据结构和内容进行有效验证。
+  
+■ 漏洞类型：信息泄露（信息）
+  ▶ 位置：L105
+  ▶ 代码特征：
+    post.setUpdateBy(getUsername());
+  ▶ 攻击向量：当前用户信息未进行适当的保护，可能泄露用户身份信息。
+  ▶ 修复建议：对getUsername()返回的敏感信息进行适当的审计和处理。
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysPostController.java
+■ 漏洞类型：代码注入（中危）
+  ▶ 位置：L106
+  ▶ 代码特征：
+    return toAjax(postService.updatePost(post));
+  ▶ 攻击向量：未对post进行充分验证，可以构造恶意post对象来影响updatePost逻辑
+  ▶ 修复建议：对post对象进行严格的验证和过滤以避免代码注入风险
+
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysPostController.java
+■ 漏洞类型：缺乏输入验证（高危）
+  ▶ 位置：L117
+  ▶ 代码特征：
+    return toAjax(postService.deletePostByIds(postIds));
+  ▶ 攻击向量：postIds未经过严格验证与清洗，攻击者可构造postIds为非预期值，例如使用postIds='1,2; DROP TABLE users;'进行SQL注入或删除其他不相关数据
+  ▶ 修复建议：对postIds进行类型检查和白名单过滤
+
+<审计通过>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysPostController.java
+■ 漏洞类型：缺乏输入验证（高危）
+  ▶ 位置：L117
+  ▶ 代码特征：
+    return toAjax(postService.deletePostByIds(postIds));
+  ▶ 攻击向量：未验证postIds参数，可能导致SQL注入或者删除任意记录
+  ▶ 修复建议：对postIds进行严格的输入验证和合法性检查
+
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysPostController.java
+■ 漏洞类型：权限绕过（中危）
+  ▶ 位置：L126-L127
+  ▶ 代码特征：
+    List<SysPost> posts = postService.selectPostAll();
+    return success(posts);
+  ▶ 攻击向量：如果postService.selectPostAll未验证用户权限，恶意用户可能会获取所有岗位信息
+  ▶ 修复建议：在调用selectPostAll之前添加权限验证逻辑
+
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：不安全的文件导出（中危）
+  ▶ 位置：L56
+  ▶ 代码特征：
+    util.exportExcel(response, list, "岗位数据")
+  ▶ 攻击向量：如果list包含恶意数据，可能导致Excel文件中嵌入恶意脚本。
+  ▶ 潜在影响：用户下载的Excel文件中可能会出现恶意代码，导致XSS攻击。
+  ▶ 修复建议：在导出前对数据进行严格的清洗和验证，确保不包含恶意内容。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysProfileController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L71, L75
+  ▶ 代码特征：
+    return error("修改用户'" + loginUser.getUsername() + "'失败，手机号码已存在");
+    return error("修改用户'" + loginUser.getUsername() + "'失败，邮箱账号已存在");
+  ▶ 攻击向量：通过输出错误信息，攻击者可推测系统中已存在的用户名或电话号码，进而进行针对性攻击。
+  ▶ 修复建议：避免直接输出用户相关信息，使用通用错误信息替代。
+
+■ 漏洞类型：密码明文传输（高危）
+  ▶ 位置：L98-L99
+  ▶ 代码特征：
+    if (!SecurityUtils.matchesPassword(oldPassword, password))
+  ▶ 攻击向量：旧密码以明文形式与存储密码进行比对，可能在传输过程中被窃取。
+  ▶ 修复建议：使用加密或哈希方案进行密码比对，确保传输过程中数据安全。
+
+■ 漏洞类型：文件上传漏洞（中危）
+  ▶ 位置：L127
+  ▶ 代码特征：
+    String avatar = FileUploadUtils.upload(RuoYiConfig.getAvatarPath(), file, MimeTypeUtils.IMAGE_EXTENSION);
+  ▶ 攻击向量：如果FileUploadUtils未有效验证文件类型或大小，可能导致恶意文件上传。
+  ▶ 修复建议：对上传文件进行严格验证，包括文件类型、大小及内容检查。
+
+■ 漏洞类型：无验证的操作（高危）
+  ▶ 位置：L128
+  ▶ 代码特征：
+    if (userService.updateUserAvatar(loginUser.getUsername(), avatar))
+  ▶ 攻击向量：未检查用户权限可能导致任意用户更改头像。
+  ▶ 修复建议：增加用户身份和权限验证，确保用户执行的操作是其权限范围内的。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysProfileController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L71-L75
+  ▶ 代码特征：
+    return error("修改用户'" + loginUser.getUsername() + "'失败，手机号码已存在");
+    return error("修改用户'" + loginUser.getUsername() + "'失败，邮箱账号已存在");
+  ▶ 攻击向量：通过触发异常信息，可以泄露用户存在与否的信息
+  ▶ 修复建议：避免在错误信息中使用具体的用户敏感信息，使用更为通用的错误提示。
+
+■ 漏洞类型：文件上传未做验证（高危）
+  ▶ 位置：L127
+  ▶ 代码特征：
+    String avatar = FileUploadUtils.upload(RuoYiConfig.getAvatarPath(), file, MimeTypeUtils.IMAGE_EXTENSION);
+  ▶ 攻击向量：恶意用户可以通过上传一个非图片格式文件来进行攻击
+  ▶ 修复建议：在上传文件时进行 MIME 类型和文件扩展名双重检查，确保文件为预期类型。
+
+■ 漏洞类型：敏感信息使用不当（中危）
+  ▶ 位置：L100-L104
+  ▶ 代码特征：
+    return error("修改密码失败，旧密码错误");
+    return error("新密码不能与旧密码相同");
+  ▶ 攻击向量：错误信息中泄露密码验证失败原因，可能会被恶意用户利用
+  ▶ 修复建议：使用通用的错误信息，例如“密码验证失败”而非具体的描述。
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysProfileController.java
+■ 漏洞类型：潜在的信息泄露（中危）
+  ▶ 位置：L71, L75
+  ▶ 代码特征：
+    return error("修改用户'" + loginUser.getUsername() + "'失败，手机号码已存在");
+  ▶ 攻击向量：攻击者可以构造请求，获取到其他用户的手机号码或邮箱信息，尤其是在响应中泄露的情况下。
+  ▶ 修复建议：避免将用户信息直接暴露在错误信息中，可以使用通用的错误消息，不暴露具体的用户信息。
+
+■ 漏洞类型：不安全的信息存储（中危）
+  ▶ 位置：L106
+  ▶ 代码特征：
+    newPassword = SecurityUtils.encryptPassword(newPassword);
+  ▶ 攻击向量：加密方法使用可能存在弱密码算法，不保证新密码的安全性，攻击者可能通过密码暴力破解获得信息。
+  ▶ 修复建议：确保使用强加密算法和随机salt，保持安全性。
+
+■ 漏洞类型：未验证的文件上传（高危）
+  ▶ 位置：L127
+  ▶ 代码特征：
+    String avatar = FileUploadUtils.upload(RuoYiConfig.getAvatarPath(), file, MimeTypeUtils.IMAGE_EXTENSION);
+  ▶ 攻击向量：攻击者可以上传恶意文件，导致远程代码执行或服务拒绝。
+  ▶ 修复建议：对上传的文件进行严格验证，确保文件类型和内容的合法性。
+
+■ 漏洞类型：未校验的用户输入（高危）
+  ▶ 位置：L43-L53
+  ▶ 代码特征：
+    ajax.put("roleGroup", userService.selectUserRoleGroup(loginUser.getUsername()));
+    ajax.put("postGroup", userService.selectUserPostGroup(loginUser.getUsername()));
+  ▶ 攻击向量：用户可能利用图灵完整性范式对敏感数据发起攻击，造成未授权的数据访问和篡改。
+  ▶ 修复建议：校验用户的权限，防止滥用行为。
+
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L48-L49
+  ▶ 代码特征：
+    LoginUser loginUser = getLoginUser();
+    SysUser user = loginUser.getUser();
+  ▶ 攻击向量：若未正确验证用户身份，攻击者可能通过getLoginUser()窃取其他用户的信息。
+  ▶ 修复建议：确保getLoginUser()方法严格验证用户身份。
+
+■ 漏洞类型：用户输入校验缺失（低危）
+  ▶ 位置：L69-L73
+  ▶ 代码特征：
+    if (StringUtils.isNotEmpty(user.getPhonenumber()) && !userService.checkPhoneUnique(currentUser))
+  ▶ 攻击向量：若用户输入的手机号码经过形式验证未经过内容验证，攻击者可以利用特定的号码进行验证，可能导致业务逻辑绕过。
+  ▶ 修复建议：增加手机号码的格式校验与合法性检查。
+
+■ 漏洞类型：潜在的密码暴力破解（中危）
+  ▶ 位置：L98
+  ▶ 代码特征：
+    if (!SecurityUtils.matchesPassword(oldPassword, password))
+  ▶ 攻击向量：不限制尝试次数的情况下，攻击者可以通过暴力破解获取用户密码。
+  ▶ 修复建议：对尝试密码的次数进行限制，并引入账户锁定机制。
+
+■ 漏洞类型：不安全的文件上传（高危）
+  ▶ 位置：L128
+  ▶ 代码特征：
+    String avatar = FileUploadUtils.upload(RuoYiConfig.getAvatarPath(), file, MimeTypeUtils.IMAGE_EXTENSION);
+  ▶ 攻击向量：如果未进行足够的文件类型和内容检查，攻击者可以上传恶意文件，导致服务器被入侵。
+  ▶ 修复建议：在文件上传时，严格校验文件的MIME类型和内容，确保上传的文件只有图片类型。
+
+■ 漏洞类型：用户信息未加密存储（高危）
+  ▶ 位置：L110
+  ▶ 代码特征：
+    loginUser.getUser().setPassword(newPassword);
+  ▶ 攻击向量：如果新密码在未加密的情况下被存储，攻击者能够直接访问用户信息库，窃取用户密码。
+  ▶ 修复建议：确保用户的密码信息始终使用安全的加密算法进行存储。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysProfileController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L71
+  ▶ 代码特征：
+    return error("修改用户'" + loginUser.getUsername() + "'失败，手机号码已存在");
+  ▶ 攻击向量：攻击者可能通过反复尝试不同的手机号码，获取哪些号码已注册，暴露用户名信息
+  ▶ 修复建议：返回通用错误信息，而不要泄露用户名或其他敏感信息
+
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L75
+  ▶ 代码特征：
+    return error("修改用户'" + loginUser.getUsername() + "'失败，邮箱账号已存在");
+  ▶ 攻击向量：同上，攻击者得到相同信息，可以通过邮箱信息定位用户
+  ▶ 修复建议：返回通用错误信息，而不要泄露用户名或其他敏感信息
+
+■ 漏洞类型：强制类型转换（低危）
+  ▶ 位置：L99-100
+  ▶ 代码特征：
+    if (!SecurityUtils.matchesPassword(oldPassword, password))
+  ▶ 攻击向量：若提供了错误格式的密码（如null），将可能抛出异常或导致逻辑错误
+  ▶ 修复建议：增加对输入密码的类型检查和处理
+
+■ 漏洞类型：输入验证不足（低危）
+  ▶ 位置：L124-126
+  ▶ 代码特征：
+    if (!file.isEmpty())
+  ▶ 攻击向量：可以上传恶意文件，可能导致远程代码执行
+  ▶ 修复建议：检查文件类型和大小，并对输入进行更加严格的验证
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysProfileController.java
+■ 漏洞类型：信息泄露（低危）
+  ▶ 位置：L49
+  ▶ 代码特征：
+    SysUser user = loginUser.getUser();
+  ▶ 攻击向量：若未授权用户访问，则用户信息泄露
+  ▶ 修复建议：在获取用户信息前，检查并确保用户已通过身份验证
+
+■ 漏洞类型：密码安全（中危）
+  ▶ 位置：L102-L106
+  ▶ 代码特征：
+    newPassword = SecurityUtils.encryptPassword(newPassword);
+  ▶ 攻击向量：若新密码加密方法存在漏洞，可能导致用户密码被暴露
+  ▶ 修复建议：使用更强的加密算法，同时确保安全存储加密后的密码
+
+■ 漏洞类型：文件上传漏洞（高危）
+  ▶ 位置：L126-L134
+  ▶ 代码特征：
+    String avatar = FileUploadUtils.upload(RuoYiConfig.getAvatarPath(), file, MimeTypeUtils.IMAGE_EXTENSION);
+  ▶ 攻击向量：上传恶意文件可能导致代码执行或服务中断
+  ▶ 修复建议：对上传文件进行更严格的类型和内容检查，确保只允许安全的文件类型
+
+■ 漏洞类型：缺少有效性检查（信息）
+  ▶ 位置：L69-L71, L73-L75
+  ▶ 代码特征：
+    if (StringUtils.isNotEmpty(user.getPhonenumber()) && !userService.checkPhoneUnique(currentUser))
+  ▶ 攻击向量：若没有有效性检查，可能造成重复手机号或邮箱导致的用户数据混乱
+  ▶ 修复建议：加强用户输入的有效性检查和反馈机制
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysProfileController.java
+■ 漏洞类型：密码暴露（中危）
+  ▶ 位置：L98-L106
+  ▶ 代码特征：
+    if (!SecurityUtils.matchesPassword(oldPassword, password))
+    if (SecurityUtils.matchesPassword(newPassword, password))
+  ▶ 攻击向量：如果攻击者获取了系统中用户的旧密码，可以利用该功能暴力破解或进行社会工程学攻击，导致用户账户安全受威胁
+  ▶ 修复建议：增加对旧密码的安全性检测，例如限制登录尝试次数，并使用更复杂的条件来验证新旧密码
+
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：未验证的文件上传（高危）
+  ▶ 位置：L127
+  ▶ 代码特征：
+    String avatar = FileUploadUtils.upload(RuoYiConfig.getAvatarPath(), file, MimeTypeUtils.IMAGE_EXTENSION);
+  ▶ 攻击向量：恶意文件上传，用户可以上传任意文件，可能导致远程代码执行
+  ▶ 修复建议：验证上传文件的类型和内容，确保仅允许上传图像文件
+
+// 文件路径2
+■ 漏洞类型：明文密码存储（高危）
+  ▶ 位置：L106
+  ▶ 代码特征：
+    newPassword = SecurityUtils.encryptPassword(newPassword);
+  ▶ 攻击向量：若没有强加密机制，攻击者可能在数据库中获取明文密码
+  ▶ 修复建议：确保使用强加密算法和适当的盐值进行加密，避免使用已知的过时加密算法
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysRegisterController.java
+■ 漏洞类型：未验证的用户输入（中危）
+  ▶ 位置：L31
+  ▶ 代码特征：
+    if (!("true".equals(configService.selectConfigByKey("sys.account.registerUser"))))
+  ▶ 攻击向量：如果configService.selectConfigByKey方法返回的用户输入无法被正确验证，攻击者可能通过恶意修改配置实现非法注册。
+  ▶ 修复建议：确保从configService获取的配置项是经过严格验证的，且增加必要的异常处理。
+
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysRegisterController.java
+■ 漏洞类型：信任用户输入（高危）
+  ▶ 位置：L35
+  ▶ 代码特征：
+    String msg = registerService.register(user);
+  ▶ 攻击向量：如果register方法未对user进行充分验证，可构造恶意用户数据进行注册，可能导致用户数据篡改或服务拒绝。
+  ▶ 修复建议：添加输入验证和清理逻辑，确保user数据符合预期格式和标准。
+
+<审计通过>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysRegisterController.java
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysRoleController.java
+■ 漏洞类型：SQL注入（高危）
+  ▶ 位置：L63
+  ▶ 代码特征：
+    List<SysRole> list = roleService.selectRoleList(role);
+  ▶ 攻击向量：如果role对象中的字段如名称等未进行有效的过滤，则攻击者可构造含有SQL注入的角色名字或id来操控查询条件。
+  ▶ 修复建议：在对role对象字段进行数据库查询前，应用有效的参数化查询或数据过滤。
+
+■ 漏洞类型：反序列化漏洞（高危）
+  ▶ 位置：L259
+  ▶ 代码特征：
+    ajax.put("depts", deptService.selectDeptTreeList(new SysDept()));
+  ▶ 攻击向量：如果SysDept类没有进行适当的输入验证，攻击者可能通过构造恶意的SysDept对象，导致不安全的反序列化过程。
+  ▶ 修复建议：确保对输入数据执行严格的验证与清理，避免对外部输入直接反序列化。
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysRoleController.java
+■ 漏洞类型：潜在信息泄露（中危）
+  ▶ 位置：L70-L74
+  ▶ 代码特征：
+    List<SysRole> list = roleService.selectRoleList(role);
+    ExcelUtil<SysRole> util = new ExcelUtil<SysRole>(SysRole.class);
+    util.exportExcel(response, list, "角色数据");
+  ▶ 攻击向量：若未对传入的role进行严格验证，可能导致敏感角色信息的导出
+  ▶ 修复建议：对role对象进行有效的安全检查，确保不导出超出权限的数据
+
+■ 漏洞类型：不安全的对象创建（低危）
+  ▶ 位置：L259
+  ▶ 代码特征：
+    ajax.put("depts", deptService.selectDeptTreeList(new SysDept()));
+  ▶ 攻击向量：未验证SysDept对象的内容，可能导致敏感列表的暴露
+  ▶ 修复建议：在创建SysDept对象时，确保对输入参数进行严格验证
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysRoleController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L135
+  ▶ 代码特征：
+    loginUser.setUser(userService.selectUserByUserName(loginUser.getUser().getUserName()));
+  ▶ 攻击向量：如果userName由用户输入且未经过严格验证，攻击者可利用此漏洞获取用户详细信息。
+  ▶ 修复建议：对用户输入的userName进行严格的验证和过滤，避免不受信任的输入。
+
+■ 漏洞类型：未经验证的输入（中危）
+  ▶ 位置：L259
+  ▶ 代码特征：
+    ajax.put("depts", deptService.selectDeptTreeList(new SysDept()));
+  ▶ 攻击向量：如果SysDept类的属性可以被用户控制，攻击者可以利用此主机类构造特殊输入，从而影响系统的行为。
+  ▶ 修复建议：确保SysDept类的所有输入属性经过充分的验证。
+
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysRoleController.java
+■ 漏洞类型：缺乏输入验证（中危）
+  ▶ 位置：L259
+  ▶ 代码特征：
+    ajax.put("depts", deptService.selectDeptTreeList(new SysDept()));
+  ▶ 攻击向量：如果SysDept类未对输入进行严格验证，攻击者可以通过修改请求体输入恶意数据来操控返回的部门树列表。
+  ▶ 修复建议：对SysDept的输入进行严格的验证和清洗，确保数据的合法性和合规性。
+
+■ 漏洞类型：缺乏权限验证（中危）
+  ▶ 位置：L136
+  ▶ 代码特征：
+    loginUser.setPermissions(permissionService.getMenuPermission(loginUser.getUser()));
+  ▶ 攻击向量：如果permissionService未对用户权限进行严格检查，攻击者可以被授权不当的权限，可能造成敏感信息泄露或操作篡改。
+  ▶ 修复建议：在获取权限前验证用户的身份和角色，确保用户只能获取其拥有的权限。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysRoleController.java
+■ 漏洞类型：未授权访问（中危）
+  ▶ 位置：L137
+  ▶ 代码特征：
+    tokenService.setLoginUser(loginUser);
+  ▶ 攻击向量：未对loginUser进行身份验证，可通过伪造请求设置其他用户的登录状态
+  ▶ 修复建议：在调用setLoginUser之前验证用户身份
+
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L259
+  ▶ 代码特征：
+    deptService.selectDeptTreeList(new SysDept());
+  ▶ 攻击向量：如果deptService根据未适当限制的SysDept对象返回所有部门信息，恶意用户可能利用此漏洞获取敏感的部门信息
+  ▶ 修复建议：对SysDept输入进行验证和权限控制，以确保只有授权用户可以访问相关信息
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysRoleController.java
+■ 漏洞类型：未授权访问（中危）
+  ▶ 位置：L258
+  ▶ 代码特征：
+    ajax.put("checkedKeys", deptService.selectDeptListByRoleId(roleId));
+  ▶ 攻击向量：如果roleId是由用户输入且未充分验证，攻击者可以通过构造任意roleId来获取任意角色的部门列表。
+  ▶ 修复建议：在调用selectDeptListByRoleId前，确保roleId经过严格的身份验证，且仅允许合法用户访问该资源。
+
+■ 漏洞类型：未授权访问（中危）
+  ▶ 位置：L259
+  ▶ 代码特征：
+    ajax.put("depts", deptService.selectDeptTreeList(new SysDept()));
+  ▶ 攻击向量：该代码未对deptService所返回的数据进行访问控制，攻击者可能通过调用相应接口获得部门树信息。
+  ▶ 修复建议：在selectDeptTreeList方法中增加用户授权校验，确保只有具备适当权限的用户才能访问部门数据。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysUserController.java
+■ 漏洞类型：SQL注入（高危）
+  ▶ 位置：L64
+  ▶ 代码特征：
+    List<SysUser> list = userService.selectUserList(user);
+  ▶ 攻击向量：如果user对象中属性未经过验证，攻击者可能构造恶意输入从而注入SQL语句
+  ▶ 修复建议：确保user对象中的输入值经过验证和清洗
+
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：缺少输入验证（中危）
+  ▶ 位置：L73
+  ▶ 代码特征：
+    List<SysUser> list = userService.selectUserList(user);
+  ▶ 攻击向量：如果user对象未经过严格验证，可能导致不当的数据检索，例如通过构造user对象进行信息泄露。
+  ▶ 修复建议：对user对象的字段进行验证，确保无不合法值传入。
+
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L75
+  ▶ 代码特征：
+    util.exportExcel(response, list, "用户数据");
+  ▶ 攻击向量：导出的Excel文件可能泄露敏感用户数据。
+  ▶ 修复建议：对导出数据进行权限验证，确保用户只能导出有权限查看的数据。
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysUserController.java
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L113
+  ▶ 代码特征：
+    List<SysRole> roles = roleService.selectRoleAll();
+  ▶ 攻击向量：未适当地限制用户权限，普通用户可能获取到管理员角色信息
+  ▶ 修复建议：增加角色权限验证，确保只有拥有相应权限的用户可以访问管理员角色信息
+
+<审计通过>
+</审计报告>
+--------------------------------
+<审计报告>
+// C:\Users\34834\Desktop\黑客\AiCodeAudits\pythonProject\演示项目\RuoYi-Vue-master\ruoyi-admin\src\main\java\com\ruoyi\web\controller\system\SysUserController.java
+■ 漏洞类型：权限控制缺失（中危）
+  ▶ 位置：L127
+  ▶ 代码特征：
+    deptService.checkDeptDataScope(user.getDeptId());
+  ▶ 攻击向量：未验证userId，攻击者可能构造请求篡改deptId，导致未授权访问数据
+  ▶ 修复建议：在调用checkDeptDataScope前添加用户权限校验逻辑
+
+■ 漏洞类型：信息泄露（低危）
+  ▶ 位置：L254
+  ▶ 代码特征：
+    return success(deptService.selectDeptTreeList(dept));
+  ▶ 攻击向量：返回的部门树列表可能包含敏感信息，攻击者可利用接口推断系统结构
+  ▶ 修复建议：根据用户权限过滤返回数据
+</审计报告>
+--------------------------------
+<审计报告>
+// 文件路径1
+■ 漏洞类型：缺乏用户输入验证（中危）
+  ▶ 位置：L43-L46
+  ▶ 代码特征：
+    List<UserEntity> userList = new ArrayList<UserEntity>(users.values());
+  ▶ 攻击向量：未验证users数据来源，如果users未经过权限控制可导致信息泄露
+  ▶ 修复建议：在获取用户列表之前增加权限验证，确保只有授权用户能访问该数据
+
+■ 漏洞类型：信息泄露（中危）
+  ▶ 位置：L111
+  ▶ 代码特征：
+    return R.fail("用户不存在");
+  ▶ 攻击向量：返回模糊化信息，攻击者可通过多次尝试确定用户身份
+  ▶ 修复建议：改为返回通用错误信息，例如"操作失败"而不暴露具体上下文
+</审计报告>
+--------------------------------
