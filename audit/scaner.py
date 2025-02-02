@@ -39,7 +39,7 @@ def scan_dir(dir_path, parent_dir):
                     parent_dir.source_files.append(SourceFile(
                         path=entry_path,
                         name=entry.name,
-                        source_code=gen_line_code(content),
+                        source_code=content,
                         extension=ext
                     ))
 
@@ -96,24 +96,42 @@ def traverse_source_dir_bfs(root):
     while queue:
         current = queue.pop(0)
         for file in current.source_files:
-            file_info = f"</代码单元>\n//{file.path}\n{file.source_code}</代码单元>"
+            file_info = f"<代码单元>\n//{file.path}\n{file.source_code}<代码单元>"
             text.append(file_info)
         for sub_dir in current.source_dirs:
             queue.append(sub_dir)
     return text
 
 
-def get_all_source_files_bfs(root_dir):
+def get_all_source_files_bfs(root_dir,chunk_token_size):
     """
     使用广度优先搜索获取SourceDir对象中的所有SourceFile。
 
     :param root_dir: SourceDir对象
     :return: 包含所有SourceFile的列表
     """
+    def split_large_files(files, chunk_size):
+        new_files = []
+        for file in files:
+            while len(file.source_code) > 0:
+                chunk = file.source_code[:chunk_size]
+                file.source_code = file.source_code[chunk_size:]
+                new_files.append(SourceFile(
+                        path=file.path,
+                        name=file.name,
+                        source_code=gen_line_code(chunk),
+                        extension=file.extension
+                    ))
+        return new_files
+
     queue = [root_dir]
     all_files = []
     while queue:
         current_dir = queue.pop(0)
-        all_files.extend(current_dir.source_files)  # 添加当前目录下的所有文件
+
+        # 分割过大的文件
+        processed_files = split_large_files(current_dir.source_files, chunk_token_size)
+
+        all_files.extend(processed_files)  # 添加当前目录下的所有文件（包括拆分后的）
         queue.extend(current_dir.source_dirs)  # 将当前目录下的所有子目录加入队列
     return all_files

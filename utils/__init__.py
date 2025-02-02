@@ -2,7 +2,7 @@ import hashlib
 import re
 import sys
 from typing import List
-
+from loguru import logger
 import networkx as nx
 import tiktoken
 from matplotlib import pyplot as plt
@@ -76,7 +76,8 @@ def get_code_by_line(text: str, start_line: int, end_line: int) -> str:
 
     # 检查起始行和结束行的有效性
     if start_line < 1 or end_line > len(lines) or start_line > end_line:
-        raise ValueError("无效的起始行或结束行",start_line,end_line)
+        logger.error("无效的起始行或结束行",start_line,end_line)
+        end_line=start_line+1
 
     # 提取指定范围的行
     extracted_lines = lines[start_line - 1:end_line]
@@ -92,27 +93,33 @@ def parse_code_uint(code,path,name,input_text):
     :param input_text: 包含 <输出单元> 标签的输入文本
     :return: 解析后的内容列表，每个元素是一个字典
     """
+    if input_text.replace("\n","").strip().find("未发现数据")!=-1:
+        return None
     # 使用正则表达式提取 <输出单元> 标签内的内容
-    match = re.search(r'<输出单元>\n(.*?)\n</输出单元>', input_text, re.DOTALL)
+    match = re.search(r'<输出单元>\n(.*?)\n<输出单元>', input_text, re.DOTALL)
     if not match:
-        raise ValueError("未找到 <输出单元> 标签或标签格式不正确")
+        raise ValueError("未找到 <输出单元> 标签或标签格式不正确",input_text)
     content = match.group(1)
+    if content=="" or content==None:
+        return None
     # 按行分割内容
     lines = content.strip().split('\n')
     parsed_data = []
     for line in lines:
-        parts = line.split('<分割>')
+        parts = line.split('<SEP>')
         if len(parts) != 4:
-            raise ValueError(f"行 '{line}' 的格式不正确，应包含四个部分")
+            raise ValueError(f"行 '{line}' 的格式不正确，应包含四个部分",parts)
 
-        lines=parts[3].strip().split("-")
+        line_list=parts[3].strip().split("-")
+        if len(line_list) != 2:
+            raise Exception("解析行号错误",line_list,line)
         parsed_data.append(CodeUnit(
             source_name=parts[0].strip(),
             target_name=parts[1].strip(),
             source_desc=parts[2].strip(),
-            start_code_line=int(lines[0]),
-            end_code_line=int(lines[1]),
-            source_code=get_code_by_line(code,start_line=int(lines[0]),end_line=int(lines[1])),
+            start_code_line=int(line_list[0]),
+            end_code_line=int(line_list[1]),
+            source_code=get_code_by_line(code,start_line=int(line_list[0]),end_line=int(line_list[1])),
             path=path,
             name=name
         ))

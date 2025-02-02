@@ -30,9 +30,9 @@ def init():
     parser = argparse.ArgumentParser(description="脚本说明")
     # 添加命令行参数
     # parser.add_argument('-d', type=str, help='目标项目目录路径', required=True)
-    parser.add_argument('-d', type=str, help='目标项目目录路径', default="./演示项目/RuoYi-Vue-master/ruoyi-admin")
+    parser.add_argument('-d', type=str, help='目标项目目录路径', default="./演示项目/openssh-9.9p1")
     parser.add_argument('-o', type=str, default="./output", help="输出文件目录，默认是./output")
-    parser.add_argument('-b', type=int, default=10, help="并发数量，默认是10")
+    parser.add_argument('-b', type=int, default=100, help="并发数量，默认是10")
 
     # 解析命令行参数
     args = parser.parse_args()
@@ -51,6 +51,8 @@ async def async_run_agent_1(source_file_list:List[SourceFile],out_file,batch_siz
         tasks = [asyncio.create_task(agent_1(s)) for s in batch]
         r_list=await asyncio.gather(*tasks)
         for r in r_list:
+            if r is None:
+                continue
             res_list.extend(r)
             logger.debug(r)
     g=gen_graph_by_codeunits(res_list)
@@ -73,6 +75,8 @@ async def async_run_agent_2(g:nx.Graph,out_file,batch_size=10):
         tasks = [asyncio.create_task(agent_2(s)) for s in batch]
         r_list = await asyncio.gather(*tasks)
         for r in r_list:
+            if r is None:
+                continue
             res+=r+"\n--------------------------------\n"
             logger.debug(r)
         write_file(out_file,res)
@@ -87,7 +91,7 @@ def main():
     logger.info(f"项目MD5:{md5}")
     out_graph_file=f"{args.o}/{md5}.graphml"
     if not os.path.exists(out_graph_file):
-        source_file_lis=get_all_source_files_bfs(root_dir)
+        source_file_lis=get_all_source_files_bfs(root_dir,chunk_token_size=C.openai.max_per_tokens)
         logger.info("调用异步处理Agent_1...")
         asyncio.run(async_run_agent_1(source_file_lis,out_file=out_graph_file,batch_size=args.b))
     else:

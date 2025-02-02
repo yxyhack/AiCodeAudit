@@ -19,6 +19,6 @@ def gen_text_from_path(g,path):
         被调用代码单元名称:{target_name}
         当前代码源码:{source_code}
         源码摘要描述:{desc}
-        </路径_{index}>"""
+        <路径_{index}>"""
         text_list.append(text)
     return "\n".join(text_list)
