@@ -13,7 +13,7 @@
 
 1. 克隆项目到本地：
 ```bash
-git clone https://github.com/your-username/AiCodeAudit.git
+git clone https://github.com/xy200303/AiCodeAudit.git
 cd AiCodeAudit
 ```
 
