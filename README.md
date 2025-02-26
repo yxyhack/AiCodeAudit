@@ -13,7 +13,7 @@
 
 1. 克隆项目到本地：
 ```bash
-git clone https://github.com/xy200303/AiCodeAudit.git
+git clone https://github.com/yxyhack/AiCodeAudit.git
 cd AiCodeAudit
 ```
 
@@ -66,8 +66,3 @@ python main.py -d ./your-project -b 50
 
 欢迎提交Issue和Pull Request来帮助改进项目。
 
-## 联系方式
-
-如有问题或建议，请通过以下方式联系：
-- 提交Issue
-- 发送邮件至：your-email@example.com
