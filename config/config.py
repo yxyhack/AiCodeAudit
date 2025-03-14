@@ -18,7 +18,7 @@ def create_default_config(file_path):
             'max_per_tokens': 4096
         },
         'project': {
-            "source_file_ext": [".py", ".go", ".js", ".java", ".cpp", ".php", ".aspx", ".asp", ".c", ".cs"],
+            "source_file_ext": [".py", ".go", ".js", ".ts", ".tsx", ".cpp", ".h", ".java", ".cpp", ".php", ".aspx", ".asp", ".c", ".cs"],
             "config_file_ext": [".yaml", ".xml", ".json", ".conf", ".ini", ".toml", ".config", ".settings"],
             "exclude_dir": ['node_modules', "dist", "build", "out", "venv", ".venv", "env", "target", "vendor",
                           "bower_components",
