@@ -1,8 +1,8 @@
 openai:
-  api_key: sk-BKR5huAmRgTd1qjwP6AWocZXvmgTjJ2UI46uiHi104YT4Jnh
-  base_url: https://api.openai-proxy.org/v1
-  max_per_tokens: 40000
-  model: gpt-4o-mini
+  api_key: your_api_key
+  base_url: your_api_url
+  max_per_tokens: 15000
+  model: "your_model"
 project:
   config_file_ext:
   - .yaml
@@ -55,6 +55,8 @@ project:
   - .py
   - .go
   - .js
+  - .ts
+  - .tsx
   - .java
   - .cpp
   - .php

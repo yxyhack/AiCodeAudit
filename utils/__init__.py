@@ -9,6 +9,7 @@ from matplotlib import pyplot as plt
 
 from config import C
 from models import CodeUnit
+from utils.persistence import get_all_agent1_results, safe_read_json
 
 
 def is_cmd_mode():
@@ -86,48 +87,147 @@ def get_code_by_line(text: str, start_line: int, end_line: int) -> str:
     return "\n".join(extracted_lines)
 
 
-def parse_code_uint(code,path,name,input_text):
-    """
-    从输入文本中提取并解析 <输出单元> 标签内的内容。
-
-    :param input_text: 包含 <输出单元> 标签的输入文本
-    :return: 解析后的内容列表，每个元素是一个字典
-    """
-    if input_text.replace("\n","").strip().find("未发现数据")!=-1:
-        return None
-    # 使用正则表达式提取 <输出单元> 标签内的内容
-    match = re.search(r'<输出单元>\n(.*?)\n<输出单元>', input_text, re.DOTALL)
-    if not match:
-        raise ValueError("未找到 <输出单元> 标签或标签格式不正确",input_text)
-    content = match.group(1)
-    if content=="" or content==None:
-        return None
-    # 按行分割内容
-    lines = content.strip().split('\n')
-    parsed_data = []
-    for line in lines:
-        parts = line.split('<SEP>')
-        if len(parts) != 4:
-            raise ValueError(f"行 '{line}' 的格式不正确，应包含四个部分",parts)
-
-        line_list=parts[3].strip().split("-")
-        if len(line_list) != 2:
-            raise Exception("解析行号错误",line_list,line)
-        parsed_data.append(CodeUnit(
-            source_name=parts[0].strip(),
-            target_name=parts[1].strip(),
-            source_desc=parts[2].strip(),
-            start_code_line=int(line_list[0]),
-            end_code_line=int(line_list[1]),
-            source_code=get_code_by_line(code,start_line=int(line_list[0]),end_line=int(line_list[1])),
+def parse_code_uint(code: str, path: str, name: str, input_text: str) -> CodeUnit:
+    try:
+        # 检查是否包含"未发现数据"
+        if input_text.replace("\n","").strip().find("未发现数据") != -1:
+            return None
+            
+        # 检查输入文本是否包含必要的标签
+        if '<输出单元>' not in input_text:
+            formatted_text = format_input_text(input_text)
+            if formatted_text:
+                input_text = formatted_text
+            else:
+                raise ValueError("输入文本格式不正确")
+                
+        # 解析输入文本
+        lines = input_text.strip().split('\n')
+        parsed_data = []
+        
+        for line in lines:
+            if line and line != '<输出单元>':
+                parts = line.split('<SEP>')
+                if len(parts) >= 4:
+                    # 确保只使用前四个部分，忽略多余的部分
+                    source_name, target_name, source_desc, line_range = [parts[i].strip() for i in range(4)]
+                    
+                    # 处理单行情况
+                    if '-' not in line_range:
+                        try:
+                            line_num = int(line_range)
+                            start_line = line_num
+                            end_line = line_num
+                        except ValueError:
+                            logger.warning(f"无效的行号: {line_range}，使用默认值1")
+                            start_line = 1
+                            end_line = 1
+                    else:
+                        # 处理行号范围
+                        try:
+                            line_range_parts = line_range.split("-")
+                            if len(line_range_parts) != 2:
+                                logger.warning(f"行号范围格式不正确: {line_range}，使用默认值1-1")
+                                start_line = 1
+                                end_line = 1
+                            else:
+                                start_line = int(line_range_parts[0])
+                                end_line = int(line_range_parts[1])
+                                # 确保开始行不大于结束行
+                                if start_line > end_line:
+                                    logger.warning(f"开始行大于结束行: {start_line} > {end_line}，交换它们")
+                                    start_line, end_line = end_line, start_line
+                        except ValueError:
+                            logger.warning(f"行号范围包含非数字: {line_range}，使用默认值1-1")
+                            start_line = 1
+                            end_line = 1
+                    
+                    # 确保行号在有效范围内
+                    code_lines = code.splitlines()
+                    if start_line < 1:
+                        logger.warning(f"开始行号小于1: {start_line}，设置为1")
+                        start_line = 1
+                    if end_line > len(code_lines):
+                        logger.warning(f"结束行号超出代码行数: {end_line} > {len(code_lines)}，设置为最大行数")
+                        end_line = len(code_lines)
+                    
+                    parsed_data.append(CodeUnit(
+                        source_code=get_code_by_line(code, start_line, end_line),
+                        path=path,
+                        name=name,
+                        source_name=source_name,
+                        target_name=target_name,
+                        source_desc=source_desc,
+                        start_code_line=start_line,
+                        end_code_line=end_line
+                    ))
+                else:
+                    logger.warning(f"行格式不正确，缺少足够的<SEP>分隔符: {line}")
+        
+        if not parsed_data:
+            # 如果没有解析到数据，返回一个基本的 CodeUnit
+            logger.warning("未能解析任何代码单元，返回默认CodeUnit")
+            return CodeUnit(
+                source_code=code,
+                path=path,
+                name=name,
+                source_name="unknown",
+                target_name="unknown",
+                source_desc="no description",
+                start_code_line=1,
+                end_code_line=len(code.splitlines()) or 1
+            )
+            
+        return parsed_data[0] if len(parsed_data) == 1 else parsed_data
+        
+    except Exception as e:
+        logger.error(f"解析代码单元失败: {str(e)}")
+        logger.debug(f"问题输入文本: {input_text}")
+        # 返回一个基本的CodeUnit而不是抛出异常，以提高鲁棒性
+        return CodeUnit(
+            source_code=code,
             path=path,
-            name=name
-        ))
+            name=name,
+            source_name="error",
+            target_name="error",
+            source_desc=f"解析错误: {str(e)}",
+            start_code_line=1,
+            end_code_line=len(code.splitlines()) or 1
+        )
 
-    return parsed_data
+def format_input_text(text: str) -> str:
+    """
+    尝试格式化不完整的输入文本
+    """
+    if not text or not text.strip():
+        return None
+        
+    lines = text.strip().split('\n')
+    formatted_lines = []
+    
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+            
+        # 检查是否有足够的<SEP>分隔符
+        if line.count('<SEP>') < 3 and line != '<输出单元>':
+            # 尝试修复格式
+            parts = line.split('<SEP>')
+            while len(parts) < 4:
+                parts.append("unknown")
+            line = '<SEP>'.join(parts)
+            
+        formatted_lines.append(line)
+    
+    # 确保最后一行是<输出单元>
+    if not formatted_lines or formatted_lines[-1] != '<输出单元>':
+        formatted_lines.append('<输出单元>')
+        
+    return '\n'.join(formatted_lines)
 
 
-def gen_graph_by_codeunits(codeunits: List[CodeUnit]):
+def gen_graph_by_codeunits(codeunits: List[CodeUnit]) -> nx.DiGraph:
     """
     根据 CodeUnitList 生成知识图谱。
 
@@ -136,17 +236,69 @@ def gen_graph_by_codeunits(codeunits: List[CodeUnit]):
     """
     # 创建一个有向图
     G = nx.DiGraph()
+    
     # 添加节点和边
     for unit in codeunits:
-        source_name = unit.name+"|"+unit.source_name
-        target_name = unit.name+"|"+unit.target_name
-        # 添加节点
-        G.add_node(source_name,source_code=unit.source_code,target_name=unit.target_name,source_name=unit.source_name, desc=unit.source_desc, start_code_line=unit.start_code_line, end_code_line=unit.end_code_line,name=unit.name,path=unit.path)
+        # 如果 unit 是元组，需要先解包
+        if isinstance(unit, tuple):
+            unit = unit[0] if unit else None
+        
+        # 如果 unit 是 None，跳过这次循环
+        if unit is None:
+            continue
+            
+        try:
+            source_name = f"{unit.name}|{unit.source_name}"
+            target_name = f"{unit.name}|{unit.target_name}"
+            
+            # 添加节点
+            G.add_node(source_name,
+                      source_code=unit.source_code,
+                      target_name=unit.target_name,
+                      source_name=unit.source_name,
+                      desc=unit.source_desc,
+                      start_code_line=unit.start_code_line,
+                      end_code_line=unit.end_code_line,
+                      name=unit.name,
+                      path=unit.path)
 
-        if not G.has_node(target_name):
-            G.add_node(target_name,source_code=unit.source_code,source_name=unit.source_name, target_name=unit.target_name,desc=unit.source_desc, start_code_line=unit.start_code_line, end_code_line=unit.end_code_line,name=unit.name,path=unit.path)
-        # 添加边
-        G.add_edge(source_name, target_name)
+            if not G.has_node(target_name):
+                G.add_node(target_name,
+                          source_code=unit.source_code,
+                          source_name=unit.source_name,
+                          target_name=unit.target_name,
+                          desc=unit.source_desc,
+                          start_code_line=unit.start_code_line,
+                          end_code_line=unit.end_code_line,
+                          name=unit.name,
+                          path=unit.path)
+            # 添加边
+            G.add_edge(source_name, target_name)
+        except AttributeError as e:
+            logger.error(f"处理代码单元时出错: {e}")
+            logger.error(f"问题单元: {unit}")
+            continue
+    
+    # 持久化存储图结构
+    try:
+        from utils.persistence import save_graph_result
+        import hashlib
+        import json
+        
+        # 生成图的唯一标识
+        graph_data = {
+            "nodes": [{"id": n, **G.nodes[n]} for n in G.nodes()],
+            "edges": [{"source": u, "target": v} for u, v in G.edges()]
+        }
+        
+        # 使用图数据内容生成MD5作为图的唯一ID
+        graph_id = hashlib.md5(json.dumps(graph_data, sort_keys=True).encode()).hexdigest()
+        
+        # 保存图数据
+        save_graph_result(graph_id, graph_data)
+    except Exception as e:
+        logger.error(f"持久化图结构时出错: {e}")
+            
     return G
 
 # 可视化图
@@ -246,6 +398,6 @@ def find_all_paths(graph):
     return paths
 
 #写入文件
-def write_file(file,text):
-    with open(file,"w",encoding="utf-8") as f:
+def write_file(file, text):
+    with open(file, "w", encoding="utf-8") as f:
         f.write(text)

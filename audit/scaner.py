@@ -53,7 +53,11 @@ def is_config_file(ext):
 
 
 def is_excluded_dir(dir_path):
-    return any(exclude in dir_path for exclude in C.project.exclude_dir)
+    dir_name = os.path.basename(dir_path)
+    for exclude in C.project.exclude_dir:
+        if dir_name == exclude:
+            return True
+    return False
 
 
 def read_source_file(file_path):
